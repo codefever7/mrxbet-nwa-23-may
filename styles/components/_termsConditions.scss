@@ -1,0 +1,197 @@
+@import "../core/var";
+
+section.terms-conditions {
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .nav {
+        .icon {
+            width: 50px;
+            padding: 5px 10px;
+            background: $black;
+            margin-right: 10px;
+        }
+        a {
+            background: $grayDark;
+            color: $white;
+            border-bottom: 1px solid $grayLight;
+            line-height: 1;
+        }
+        a:hover {
+            color: $white;
+            background: $redDark;
+        }
+        a.active {
+            background: $redDark;
+        }
+    }
+    .jumbotron {
+        padding: 10px;
+        background: $grayWhiteSmoke;
+        h2 {
+            padding-bottom: 10px;
+        }
+    }
+    .accordion {
+        .card {
+            border-radius: 0;
+        }
+        .active.card-header {
+            color: $white;
+            background: $redDark;
+        }
+        .card-header {
+            color: $white;
+            background: $grayDark;
+            border-radius: 0;
+            border-bottom: 0;
+            padding: 0;
+            .row {
+                margin-right: 0;
+                margin-left: 0;
+                cursor: pointer;
+                .icon {
+                    background: $black;
+                    padding: 5px;
+                }
+                .title {
+                    display: -webkit-box;
+                    -webkit-align-self: center;
+                    line-height: 1;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    max-height: 45px;
+                }
+            }
+            .row:hover {
+            background: $redDark;
+            }
+        }
+        .card-header.collapse.show {
+            color: $white;
+            background: $redDark;
+        }
+        .card-body {
+            background: $grayWhiteSmoke;
+        }
+    }
+    .jb-icon {
+        font-size: 26px;
+        line-height: 26px;
+        margin: 5px 0;
+    }
+
+    table.table-bordered {
+        thead {
+            display: table;
+            overflow: auto;
+            width: 100%;
+            tr {
+                th {
+                    background-color: $grayDark;
+                    color: $white;
+                    border: 1px solid $gRtpGray;
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                th.active {
+                    background-color: $redDark;
+                    border: 1px solid $redDark;
+                }
+
+                th.asc, th.desc {
+                    padding-right: 34px;
+                }
+
+                th.asc:after {
+                    content: '';
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    height: 100%;
+                    width: 20px;
+                    background-image: url("/static/images/Casino_Arrow_Down.png");
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: center;
+                }
+
+                th.desc:after {
+                    content: '';
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    height: 100%;
+                    width: 20px;
+                    background-image: url("/static/images/Casino_Arrow_Up.png");
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: center;
+                }
+            }
+        }
+
+        tbody {
+            display: block;
+            height: 720px;
+            overflow: auto;
+            width: 100%;
+        }
+
+        tr {
+            td, th {
+                border: 1px solid $gRtpGray;
+                padding: 5px;
+            }
+
+            td.first, th.first {
+                border-left: 0;
+                width: 50px;
+            }
+            th.last {
+                border-right: 0;
+                width: 125px;
+            }
+            td.last {
+                border-right: 0;
+                text-align: right;
+                width: 120px;
+            }
+
+            th {
+                border-top: 0;
+            }
+
+            td {
+                background-color: $gRtpGrayLight;
+                border-bottom: 0;
+
+                img {
+                    height: 20px;
+                    width: 35px;
+                }
+            }
+        }
+    }
+    
+    @include breakpoint(mobile, max) {
+        .jumbotron {
+            display: none;
+        }
+        table.table-bordered {
+            tbody {
+                height: 450px;
+            }
+        }
+    }
+
+    @include breakpoint(mobile, min) {
+        .card-body {
+            display: none;
+        }
+    }
+}

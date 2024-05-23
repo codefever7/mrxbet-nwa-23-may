@@ -1,0 +1,270 @@
+@import "../core/var";
+.landing-quickregister{
+  background-repeat: no-repeat;
+  background-size: inherit;
+  min-height: 100%;
+  background-position-y: top;
+  background-position-x: center;
+  ul {
+    list-style-type: none;
+    padding-inline-start: 15px;
+  }
+  ul.list-unstyled {
+    position: relative;
+    overflow: hidden;
+  }
+  .list-bonus {
+    position: relative;
+    padding: 5px 0 25px 0px;
+    margin-bottom: 25px;
+    .num {
+      position: absolute;
+      z-index: 1;
+      top: -7px;
+      left: -15px;
+      height: 30px;
+      width: 30px;
+      padding: 5px;
+      background-color: $green;
+      box-shadow: 5px 5px rgba(255, 255, 255, 0.3);
+    }
+    .title {
+      position: absolute;
+      z-index: 0;
+      border: 2px solid $white;
+      padding: 7px 25px;
+      width: 275px;
+      @include breakpoint(mobile, max) {
+        width: 100%;
+      }
+    }
+  }
+  .list-bonus.last .title {
+    background-color: $green;
+    border: 2px solid $green;
+    text-align: center;
+    span {
+      font-size: 18px;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+  }
+  .register-steps {
+    background-color: $green;
+    .steps {
+      width: 100%;
+    }
+  }
+  .list-register {
+    background-color: $green;
+    height: 100px;
+    .title {
+      padding-left: 15px;
+      height: 100%;
+      left: 40px;
+      font-weight: bold;
+      text-transform: uppercase;
+      span {
+        font-size: 26px;
+        line-height: 28px;
+      }
+    }
+    .num {
+      background-color: rgba(106, 192, 91, 0.5);
+      position: absolute;
+      z-index: 2;
+      top: auto;
+      left: 15px;
+      bottom: 5px;
+      height: 40px;
+      width: 40px;
+      span {
+        font-size: 22px;
+        text-align: center;
+        display: flex;
+        top: -6px;
+        left: -6px;
+        padding: 2px;
+        flex-flow: wrap;
+        font-weight: bold;
+        color: $black;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $white;
+        z-index: 2;
+        height: 40px;
+        width: 40px;
+      }
+    }
+    i.arrow {
+      display: inline-block;
+      padding: 35px;
+      position: absolute;
+      right: 20px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    }
+    i.right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    .list-arrow {
+      position: relative;
+    }
+    @include breakpoint(laptop, max) {
+      i.arrow {
+        right: 24px
+      }
+      .title {
+        span {
+          font-size: 20px;
+        }
+      }
+    }
+    @media screen and (orientation:landscape) {
+      @include breakpoint(tablet, max) {
+        i.arrow {
+          right: 14px;
+          padding: 16px;
+        }
+        .title {
+          left: 38px;
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    @include breakpoint(mobile, max) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center !important;
+      position: relative;
+      .num {
+        height: 30px;
+        width: 30px;
+        position: inherit;
+        left: 30%;
+        span {
+          height: 30px;
+          width: 30px;
+          top: -5px;
+          left: -5px;
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+      .title {
+        height: 30px;
+        padding: 0;
+        left: 0;
+        span {
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+      i.arrow {
+        display: inline-block;
+        position: absolute;
+        width: 35px;
+        left: 6rem;
+        z-index: 2;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+    @include breakpoint(mobile-sm, max) {
+      i.arrow {
+        display: inline-block;
+        position: absolute;
+        width: 20px;
+        left: 4.2rem;
+        padding: 10px;
+        z-index: 2;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+    @include breakpoint(mobile-xs, max) {
+
+      i.arrow {
+        display: inline-block;
+        position: absolute;
+        width: 20px;
+        left: 3.5rem;
+        padding: 10px;
+        z-index: 2;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      .title span {
+        font-size: 9px;
+      }
+    }
+  }
+  .list-register:last-child {
+    i.arrow.right {
+      box-shadow: none;
+    }
+  }
+  .box-quick-regis {
+    background-color:rgba(33 ,103 , 26, 0.8);
+    padding: 20px;
+    .title {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+    }
+    p {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 18px;
+    }
+    .form-group .form-control {
+      background: $white;
+      color: $black;
+      padding: 10px;
+      border-radius: 0px;
+    }
+    .form-group.was-email-validated.has-error,
+    .form-group.was-username-validated.has-error,
+    .form-group.was-password-validated.has-error {
+      margin-bottom: 0.25rem;
+    }
+    .form-group.has-error {
+      input.form-control {
+        border: 1px solid $red;
+      }
+      .invalid-feedback {
+        display: block;
+      }
+    }
+    .btn-save {
+      border: 1px solid $yellow;
+      background: $yellow;
+      color: $black;
+      padding: 10px 20px;
+      font-family: Arial;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 19px;
+      border-radius: 0px;
+      text-transform: uppercase;
+    }
+  }
+  .terms {
+    background-color: rgba(31 ,61 , 28, 1);
+    .toggle {
+      cursor: pointer;
+      text-align: center;
+      padding: 10px 0;
+    }
+    i.jb-icon {
+      padding-left: 5px;
+      font-size: 18px;
+    }
+    .content {
+      padding-bottom: 1px;
+    }
+    .content.hide {
+      display: none;
+    }
+  }
+}

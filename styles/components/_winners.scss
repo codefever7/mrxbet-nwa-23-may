@@ -1,0 +1,145 @@
+@import "../core/var";
+
+$textColor: $white;
+$textPriceColor: $yellow;
+$borderButtonColor: $yellow;
+$buttonColor: $grayDark;
+
+section.bottom-sliders {
+  background-color: $grayDark;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.winners {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  .content {
+    color: $textColor;
+    align-items: center;
+    margin: 0 0 10px 0;
+    img {
+      margin-bottom: 0.5rem;
+      margin-right: 15px;
+    }
+    .text-list {
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .price {
+      color: $textPriceColor;
+    }
+    .location {
+      font-weight: bold;
+    }
+  }
+
+  .content-item {
+    height: 200px;
+    overflow: hidden;
+    // display: flex;
+    // width: calc(250px * 14);
+    // overflow-y: auto;
+    // animation: mymove 5s linear infinite;
+    .button-play {
+      background-color: $buttonColor;
+      border: 2px solid $borderButtonColor;
+      border-radius: 0;
+      padding: 5px 25px;
+      color: $textColor;
+      text-decoration: none;
+    }
+    .winner {
+      position: relative;
+      transition: all 0.4s ease-out;
+      // animation: mymove 2s ease-in-out infinite;
+      // -webkit-animation: mymove 2s ease-in-out infinite;
+      // transition: 0.6s ease-in-out
+    }
+  }
+
+  .content-item::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+section.winners-list {
+  .content {
+    background-color: $black;
+    .slide {
+      .group-item {
+        display: flex;
+        justify-content: center;
+        .item{
+          display: flex;
+          width: 19%;
+          align-items: center;
+          margin: 0 0.5%;
+          @include breakpoint(tablet, max) {
+            width: 30%;
+          }
+          @include breakpoint(mobile, max) {
+            width: 49%;
+          }
+          .content-img{
+            width: 30%;
+            @include breakpoint(mobile, max) {
+              width: 40px;
+            }
+            img{
+              border-radius: 25px;
+              width: 50px;
+              height: 50px;
+              overflow: hidden;
+              @include breakpoint(mobile, max) {
+                border-radius: 20px;
+                width: 40px;
+                height: 40px;
+              }
+              @include breakpoint(mobile-sm, max) {
+                border-radius: 20px;
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+          .content-text {
+            margin-left: 10px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            width: 70%;
+            @include breakpoint(mobile-sm, max) {
+              width: 65%;
+            }
+            .title {
+              color: $white;
+            }
+            .price {
+              color: $textPriceColor;
+            }
+            .gameName {
+              color: $red;
+            }
+            p {
+              margin: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+     
+    }
+  }
+}
+
+@keyframes mymove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}

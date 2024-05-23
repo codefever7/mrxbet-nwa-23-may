@@ -1,0 +1,235 @@
+@import "../../../styles/core/var";
+
+section.TotalJackpot {
+    margin-top: 20px;
+    .HeaderTItle {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: Poppins-Medium;
+        white-space: break-spaces;
+        color: var(--color-fg-menu);
+
+        @media (min-width: 564px) {
+            font-size: 26px;
+        }
+    }
+    section.casino-games {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .games {
+            .noGame {
+                display: none;
+            }
+            .games-list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                margin: 0;
+
+                .games-list-item {
+
+                    &:hover {
+                        .buttonPlayGame a.fun-mobile {
+                            margin-bottom: 0;
+
+                            @media (min-width: 1024px) {
+                                margin-bottom: 26px;
+                            }
+                        }
+                    }
+
+                    .game-title,
+                    &:hover .game-popup .game-title {
+                        display: none;
+
+                        @media (min-width: 1024px) {
+                            display: flex;
+                        }
+                    }
+                }
+
+                .carousel.jackpot {
+                    .Header {
+                        display: none;
+                        padding: 0;
+                        @media (min-width: 768px) {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                        .Title,
+                        .RightSide .btn {
+                            display: none;
+                        }
+                    }
+
+                    .GroupCasinoGames  {
+                        display: flex;
+                        padding: 0 10px;
+
+                        @media (min-width: 768px) {
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-template-rows: unset;
+                        }
+                    }
+                }
+
+                .total-jackpot-container {
+                    overflow: hidden;
+                    grid-column: span 2;
+                    grid-row: span 2;
+                    background: url(/static/images/jacpot_background.png);
+                    background-size: cover;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    border-radius: 10px;
+                    margin-bottom: 6px;
+                    justify-content: end;
+                    align-items: center;
+                    flex-direction: column;
+                    display: flex;
+
+                    .totalAmount {
+                        position: absolute;
+                        top: 54%;
+                        font-size: 16px;
+
+                        @media (min-width:1000px) {
+                            font-size: 18px;
+                        }
+
+                        @media (min-width:1190px) {
+                            font-size: 20px;
+                        }
+
+                        @media (min-width:1190px) {
+                            font-size: 24px;
+                        }
+                    }
+
+                    .buttonLogin {
+                        margin: 10px 0;
+                        height: 45px;
+                        padding: 0 15px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.TotalJackpot {
+
+    padding: 0 17px;
+    margin: 55px auto 0;
+
+    .JackpotItem {
+        background-image: url('/static/images/jackpotBG.png');
+        background-size: cover;
+        height: auto;
+        min-height: 300px;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 15px;
+
+
+        .GirlBg {
+            width: 35%;
+            align-items: flex-end;
+            display: none;
+
+            @media (min-width: 768px) {
+                display: flex;
+                position: absolute;
+                left: 0;
+            }
+
+            @media (min-width: 1024px) {
+                position: relative;
+            }
+
+            img {
+                width: 97%;
+                min-width: 280px;
+            }
+        }
+
+        .Content {
+            width: 100%;
+            text-align: center;
+            padding: 10px 10px;
+            align-self: center;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+
+            @media (min-width: 768px) {
+                width: 90%;
+            }
+
+            @media (min-width: 1024px) {
+                position: relative;
+                width: 70%;
+            }
+
+            .Title {
+                font-size: 19px;
+                color: $white;
+
+                @media (min-width: 568px) {
+                    font-size: 22px;
+                }
+
+                @media (min-width: 850px) {
+                    font-size: 22px;
+                }
+            }
+
+            .totalAmount {
+                font-size: 28px;
+                font-weight: 600;
+                margin: 10px 0 0;
+                color: $green;
+
+                @media (min-width: 768px) {
+                    margin: 6px 0;    
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    font-size: 34px;
+                }
+
+                @media (min-width: 1024px) {
+                    margin: 2px 0;    
+                }
+
+                @media (min-width:1150px) {
+                    font-size: 38px;
+                }
+            }
+
+            .buttonLogin {
+                min-width: 150px;
+                padding: 4px 20px;
+                font-size: 16px;
+                height: 30px;
+
+                @media (min-width: 768px) {
+                    padding: 8px 20px;
+                    height: 40px;
+                }
+
+                @media (min-width: 850px) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+}

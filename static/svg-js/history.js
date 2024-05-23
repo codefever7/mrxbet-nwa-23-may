@@ -1,0 +1,4 @@
+export default `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.765 24.307">
+<path id="history_" data-name="history " d="M25.871,18.251a11.163,11.163,0,1,0-2.477,4.418m2.477-4.418-.958-1.7m.958,1.7L27.352,16.9M10.971,15.153l2.788,2.788,5.577-5.577" transform="translate(-3 -3)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.75"/>
+</svg>
+`

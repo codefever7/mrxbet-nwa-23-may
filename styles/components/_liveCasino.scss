@@ -1,0 +1,84 @@
+@import "../core/var";
+
+$backgroundColor: $white;
+$backgroundListColor: $gray;
+section.live-casino {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $backgroundColor;
+  .live {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .button-end {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      .button {
+        padding: 5px 25px;
+        border: 2px solid #9d261d;
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    .header-live {
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      img {
+        width: auto;
+        height: 30px;
+        max-width: 100%;
+        align-self: center;
+      }
+      h2 {
+        margin: 0;
+      }
+    }
+    .live-list {
+      background-color: $backgroundListColor;
+      // align-self: center;
+      ul {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        padding: 0;
+        margin-top: 25px;
+        li {
+          display: block;
+          float: left;
+          width: 16%;
+          flex-basis: 16%;
+          box-sizing: border-box;
+          position: relative;
+          text-align: center;
+          a {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+          }
+          @include breakpoint(mobile, max) {
+            width: 33.33%;
+            flex-basis: 33.33%;
+          }
+          @include breakpoint(mobile-sm, max) {
+            width: 49%;
+            flex-basis: 49%;
+          }
+
+          p {
+            margin-top: 20px;
+          }
+          .header-img {
+            width: 50px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}

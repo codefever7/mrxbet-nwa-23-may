@@ -1,0 +1,1461 @@
+@import "../core/var";
+section.game-rtp,
+section.account {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  .icon-sub {
+    .jb-icon {
+      color: $grayDarker;
+    }
+  }
+  .jb-icon {
+    font-size: 26px;
+    line-height: 26px;
+    margin: 5px 0;
+  }
+  h2.title-middle {
+    color: $white;
+  }
+  .profile {
+    .block {
+      background-color: var(--color-bg-accountpage);
+      padding: 20px;
+      height: 100%;
+      border-radius: 11px;
+      color: var(--color-fg);
+
+      .title-menu {
+        font-size: 20px;
+        font-family: "Montserrat-Medium";
+      }
+
+      .arrowDown{
+        position: relative;
+        width: 34px;
+        height: 34px;
+        display: block;
+
+        @media (min-width:768px) {
+          display: none;          
+        }
+
+        &:after{
+          content: "\E85C";
+          font-family: 'jb-font';
+          color: var(--color-fg);
+          position: absolute;
+          right: -7px;
+          top: 14px;
+          text-align: center;
+          transform: translateY(-50%);
+          pointer-events: none;
+          box-sizing: border-box;
+          width: 34px;
+        }
+      }
+
+      .arrowUp{
+        position: relative;
+        width: 34px;
+        height: 34px;
+        display: block;
+
+        @media (min-width:768px) {
+          display: none;          
+        }
+
+        &:after{
+          content: "\E85B";
+          font-family: 'jb-font';
+          color: var(--color-fg);
+          position: absolute;
+          right: -7px;
+          top: 14px;
+          text-align: center;
+          transform: translateY(-50%);
+          pointer-events: none;
+          box-sizing: border-box;
+          width: 34px;
+        }
+      }
+
+      .gaming-account-balance {
+        color: var(--color-fg);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        p {
+          margin: 0;
+        }
+        .label {
+          opacity: 0.6;
+          font-size: 12px;
+          font-family: Poppins-Medium;
+        }
+        .value {
+          font-size: 24px;
+          font-family: Poppins-Medium;
+        }
+        .real-money,
+        .bonus-money,
+        .money {
+          flex: 33.33%;
+          padding: 0 6px;
+        }
+
+        .bonus-money {
+          color: $yellow2;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: $grayDarker;
+            opacity: 0.6;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: $grayDarker;
+            opacity: 0.6;
+          }
+        }
+        .money {
+          color: $greenLogin;
+        }
+      }
+      .formMarketingConsents {
+        display: none;
+
+        @media (min-width:768px) {
+          display: block;
+        }
+      }
+      .form-change-password {
+        display: none;
+
+        @media (min-width:768px) {
+          display: block;
+        }
+        label {
+          font-family: "Montserrat-SemiBold";
+          font-size: 16px;
+        }
+      }
+      h2 {
+        margin-bottom: 25px;
+      }
+      p.money {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .text-title {
+        font-size: 14px;
+        color: var(--color-fg);
+      }
+      .form-check {
+        padding-right: 20px;
+        font-size: 14px;
+        color: var(--color-fg);
+        min-width: 100px;
+        label {
+          padding-left: 16px;
+          padding-top: 6px;
+        }
+      }
+      .radio-custom input[type="radio"]::after {
+        content: "";
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background: var(--color-bg-accountpage);
+        top: 0px;
+        left: -1px;
+        position: absolute;
+      }
+      .radio-custom input[type="radio"]::before {
+        content: " ";
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-image: var(--url-uncheckbox);
+        position: absolute;
+        top: 0px;
+        left: -1px;
+        z-index: 1;
+        background-size: 25px;
+        background-repeat: no-repeat;
+      }
+      .radio-custom input[type="radio"]:checked::before {
+        background-image: var(--url-checkbox);
+      }
+      form {
+        .form-control {
+          border: 1px solid $greenGradient1;
+          border-radius: 10px;
+          background: transparent;
+          height: 45px;
+          color: var(--color-fg);
+          // opacity: 0.75;
+          &:focus {
+            color: var(--color-fg);
+          }
+        }
+      }
+
+      .acc-info {
+        color: $grayLight;
+        display: none;
+
+        @media (min-width:768px) {
+          display: block;
+        }
+
+        label {
+          font-family: "Montserrat-SemiBold";
+          font-size: 16px;
+        }
+        .col-form-label {
+          position: relative;
+          a.chang-email {
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+
+            p {
+              padding: 7px 0;
+              text-decoration: underline;
+              color: $white;
+              opacity: 0.48;
+            }
+          }
+        }
+        .account-title {
+          color: var(--color-fg);
+          margin-bottom: 0;
+        }
+        .label-box {
+          background: $gray;
+          color: $grayDarker;
+          padding: 7px 10px;
+        }
+        // @include breakpoint(mobile, max) {
+        p.bt-disabled {
+          background: #32a6244d;
+          border: 1px solid #32a6244d;
+          height: 45px;
+          border-radius: 10px;
+          color: $white;
+          display: flex;
+          align-items: center;
+        }
+        .dropdownPrefix {
+          .select-box {
+            .brd#select-button {
+              color: var(--color-fg);
+              border: 1px solid $greenGradient1;
+              border-radius: 10px;
+              background: transparent;
+              height: 45px;
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+        input[type="text"]:disabled {
+          color: $white;
+          background: #32a6244d;
+          border: 1px solid #32a6244d;
+          border-radius: 10px;
+          // font-family: 'Montserrat-Light';
+          // opacity: 0.17;
+        }
+        input {
+          border: 1px solid $greenGradient1;
+          border-radius: 10px;
+          background: transparent;
+          height: 45px;
+          // font-family: 'Montserrat-Light';
+        }
+        select:disabled {
+          color: $white;
+          background: #a7a8a8;
+          // font-family: 'Montserrat-Light';
+        }
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          // font-family: 'Montserrat-Light';
+        }
+
+        // }
+      }
+      // button.btn {
+      //   background: transparent linear-gradient(111deg, $greenGradient1 0%, $greenGradient2 100%) 0% 0% no-repeat
+      //     padding-box;
+      //   border-radius: 10px;
+      //   height: 45px;
+      //   justify-content: center;
+      //   display: flex;
+      //   align-items: center;
+      // }
+      button.btn.cancel {
+        background: $red;
+        border-color: $red;
+        color: $white;
+      }
+    }
+    > div {
+      overflow: hidden;
+    }
+    form {
+      .form-control {
+        border-radius: 0;
+        background-color: $white;
+        border: 1px solid $gray;
+        background-clip: unset;
+        color: $grayDarker;
+        height: 35px;
+        padding-left: 8px;
+        .react-datepicker-ignore-onclickoutside {
+          background: #fff;
+          color: #000;
+        }
+      }
+      .was-validated .form-control:invalid {
+        border: 1px solid $red;
+      }
+      .was-validated .form-control:valid {
+        border: 1px solid $green;
+      }
+      .has-error {
+        .invalid-feedback {
+          display: block;
+        }
+        input {
+          border: 1px solid #9d261d !important;
+        }
+        input:focus {
+          border-color: #9d261d !important;
+          box-shadow: 0 0 0 0.2rem rgba(157, 38, 29, 0.25) !important;
+        }
+      }
+    }
+  }
+  .bonuses {
+    .title-menu {
+      font-size: 20px;
+      font-family: "Montserrat-Medium";
+    }
+
+    .layout {
+      background-color: var(--color-bg-accountpage);
+      padding: 20px;
+      height: 100%;
+      border-radius: 11px;
+      color: var(--color-fg);
+      .block {
+        align-items: center;
+        padding: 10px;
+        // border: 1px solid $redDark;
+        color: $yellow;
+        img {
+          height: 100%;
+        }
+        p {
+          margin: 0;
+          padding-left: 15px;
+          
+        }
+        .text-active-fpp{
+          font-family: 'Montserrat-SemiBold';
+        }
+      }
+      .text-detail {
+        padding-top: 10px;
+      }
+      .text-title {
+        font-family: 'Montserrat-Medium';
+        font-size: 20px;
+      }
+      
+      .form-label {
+        font-family: 'Montserrat-SemiBold';
+        font-size: 16px;
+      }
+    }
+    .bonus-box {
+      padding-bottom: 15px;
+      color: var(--color-fg);
+      .item-left{
+        padding-right: 15px;
+        border-right: 0;
+        @media (min-width: 576px) {
+          padding-right: 25px;
+          border-right: 1px solid $grayDarker;
+        }
+      }
+      .item-right{
+        padding-left: 15px;
+        @media (min-width: 576px) {
+          padding-left: 25px;
+        }
+      }
+      .btn-1 {
+        float: right;
+        background: transparent linear-gradient(123deg, #FF5300 0%, #FF0000 100%) 0% 0% no-repeat padding-box;
+        font-family: 'Montserrat-SemiBold';
+        height: 45px;
+        min-width: 141px;
+        display: flex;
+        align-items: center;
+      }
+      .bonus-title {
+        color: $red;
+      }
+    }
+    .bonus-status {
+      font-family: 'Montserrat-SemiBold';
+      color: #00B71F;
+    }
+  }
+  .limits {
+    background-color: var(--color-bg-accountpage);
+    padding: 20px;
+    height: 100%;
+    border-radius: 11px;
+    color: var(--color-fg);
+    .title-menu {
+      font-size: 20px;
+      font-family: "Montserrat-Medium";
+    }
+    .limits-table {
+      &.limits-table-mobile{
+        tbody {
+          tr {
+            td:nth-child(1) {
+              width: 30%;
+            }
+            td:nth-child(2) {
+              width: 20%;
+            }
+            td:nth-child(3) {
+              width: 10%;
+            }
+            td:nth-child(4) {
+              width: 5%;
+            }
+          }
+        }
+      }
+      th {
+        border: 0;
+        padding-left: 0;
+        font-family: "Montserrat-Medium";
+        font-size: 16px;
+      }
+      tbody {
+        background: var(--color-bg-accountpage);
+        td {
+          color: var(--color-fg);
+          vertical-align: inherit;
+          padding: 5px;
+          font-size: 15px;
+          button {
+            padding: 5px;
+          }
+        }
+        tr {
+          cursor: pointer;
+          td:nth-child(1) {
+            width: 25%;
+          }
+          td:nth-child(2) {
+            width: 20%;
+          }
+          td:nth-child(3) {
+            width: 10%;
+          }
+          td:nth-child(4) {
+            width: 35%;
+          }
+          td:nth-child(5) {
+            width: 10%;
+          }
+          td{
+            border-color: $green;
+            height: 60px;
+            .icon-custom{
+              font-size: 15px;
+              color: var(--color-fg);
+            }
+          }
+        }
+        tr:last-child {
+          border-bottom: 1px solid $grayDarker;
+        }
+      }
+      form {
+        input.form-control {
+          border: 1px solid $greenGradient1;
+          border-radius: 10px;
+          background: transparent;
+          height: 45px;
+        }
+      }
+    }
+  }
+  .accordion {
+    &.accordion-main-ismobile{
+      background-color: transparent;
+      border-radius: 10px;
+      .card.accordion-mobile {
+        &:not(:first-child) {
+          border-top: 1px solid var(--color-fg-menu);
+        }
+        &.sub-menu{
+          .active.card-header::before{
+            top: 55px;
+            left: 15px;
+          }
+        }
+        .accordion{
+          &.card-header{
+            background-color: transparent;
+            border-radius: 10px;
+            padding: 24px 10px;
+          }
+          &.active.card-header::before{
+            top: 65px;
+          }
+
+        }
+        
+        .collapse{
+          .card-body{
+            background-color: transparent;
+            border-top: 1px solid $grayDarker;
+            .deposit-page{
+              .DepositTitle{
+                padding: 0 5px;
+              }
+              .deposit-form{
+                .payment-list{
+                  //display: flex;
+                  grid-template-columns: repeat(2, 1fr);
+                }
+              }
+            }
+            .withdraw-page{
+              .withdraw-form{
+                .payment-list{
+                  display: grid;
+                  grid-template-columns: repeat(1, 1fr);
+
+                  @media (min-width: 500px) {
+                    grid-template-columns: repeat(2, 1fr);
+                  }
+                }
+              }
+            }
+            .transaction-history{
+              .react-datepicker-wrapper{
+                width: 100%;
+                padding-bottom: 15px;
+              }
+            }
+            .profile{
+              .form-change-password{
+                button.cancel{
+                  background-color: $red;
+                  border-color: $red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .card {
+      border-radius: 0;
+      border: 0;
+    }
+    .active {
+      .icon { 
+        svg {
+          stroke: var(--color-fg-active-account) !important;
+
+          g,rect,circle,path,line {
+            stroke: var(--color-fg-active-account) !important;
+
+            &#myprofile{
+              fill: var(--color-fg-active-account) !important;
+              g,path {
+                fill: var(--color-fg-active-account) !important;
+              }
+            }
+          }
+        }
+      }
+      .icon-sub {
+        span {
+          color: var(--color-fg-active-account) !important;
+        }
+      }
+      .title {
+        color: var(--color-fg-active-account);
+      }
+      .title::before {
+        position: absolute;
+        content: "";
+        width: 47px;
+        height: 4px;
+        bottom: 0;
+        left: 15px;
+        //background: linear-gradient(99deg, $greenGradient1 0%, $greenGradient2 100%) 0% 0% no-repeat padding-box;
+        // transform: translate(-50%, -50%);
+        opacity: 1;
+        border-radius: 10px;
+      }
+      &.card-header {
+        stroke: var(--color-fg-menu);
+        // background: $green;
+        opacity: 1;
+      }
+      .icon-sub {
+        .jb-icon {
+          color: var(--color-fg-menu);
+        }
+      }
+      .jb-icon {
+        color: var(--color-fg-menu);
+      }
+    }
+    .card-header {
+      color: var(--color-fg-menu);
+      background: transparent;
+      border: 0;
+      
+      opacity: 0.75;
+      // font-family: Montserrat-Bold;
+      .row {
+        margin-right: 0;
+        margin-left: 0;
+        cursor: pointer;
+        span {
+          font-size: 16px; //18px;
+        }
+        .icon {
+          // background: $black;
+          padding: 5px 0;
+          display: flex;
+          svg {
+            width: 26px;
+            height: auto;
+            stroke: var(--color-fg-menu);
+
+            g,rect,circle,path,line {
+              stroke: var(--color-fg-menu);
+            }
+          }
+
+          img {
+            width: 26px;
+            height: 26px;
+          }
+        }
+        .icon-sub {
+          background: transparent;
+          padding: 5px;
+          margin-right: -10px;
+          .jb-icon {
+            color: var(--color-fg-menu);
+          }
+        }
+        .title {
+          display: -webkit-box;
+          -webkit-align-self: center;
+          //line-height: 2;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          max-height: 45px;
+          font-family: 'Montserrat-Medium';
+          padding-right: 1px;
+        }
+      }
+      &:hover {
+        // background: $green;
+        stroke: var(--color-fg-menu);
+        opacity: 1;
+      }
+    }
+    .card-header.collapse.show {
+      color: $white;
+      background: $redDark;
+    }
+    .card-body {
+      background: transparent;
+    }
+
+  }
+  .my-bets {
+    padding-top: 20px;
+    background-color: var(--color-bg-accountpage);
+      padding: 20px;
+      height: 100%;
+      border-radius: 11px;
+      color: var(--color-fg);
+      &.my-bets-mobile{
+        .my-bets-tab {
+          .tab-date{
+            padding: 0;
+            .text-time{
+              display: none;
+            }
+            .start-date{
+              width: 100%;
+              margin-bottom:15px;
+            }
+            .end-date{
+              width: 100%;
+            }
+          }
+          .btn{
+            height: 45px;
+            align-items: center;
+            display: flex;
+            p{
+              font-family: 'Montserrat-SemiBold';
+            }
+          }
+        }
+      }
+    .my-bets-tab {
+      // background: $white;
+      width: 100%;
+      display: flex;
+      height: 50px;
+      align-items: center;
+      select.form-control{
+        height: 45px;
+        color: var(--color-fg);
+
+        option {
+          color: $black;
+        }
+      }
+      .tab-date {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        .text-time {
+          align-self: center;
+          padding-right: 20px;
+        }
+        .start-date{
+          margin-right: 5px;
+          padding-left: 10px;
+        }
+        .date-time {
+          display: flex;
+          .react-datepicker__input-container{
+            input{
+              background-color: transparent;
+              border: 1px solid $greenGradient1;
+              height: 45px;
+              border-radius: 10px;
+              color: var(--color-fg);
+            }
+          }
+        }
+      }
+      .tab-css {
+        // background-color: $grayVeryDark;
+        .tab {
+          // color: $black;
+          height: 100%;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          padding-left: 15px;
+          padding-right: 15px;
+          cursor: pointer;
+          background-color: $white;
+          &.active {
+            background: $blue;
+            color: $white;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+      @include breakpoint(mobile, max) {
+        display: block;
+        height: auto;
+        .tab-css {
+      
+          .tab {
+            background-color: $white;
+            width: 50%;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            &.active {
+              background: $blue;
+              color: $white;
+            }
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+        .tab-date {
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          display: flex;
+          .text-time {
+            width: 50%;
+            align-self: center;
+          }
+          .date-time {
+            width: 100%;
+            display: block;
+            .react-datepicker-wrapper {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .tab {
+        color: $black;
+        height: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        &.active {
+          background: $green;
+          color: $white;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    .betting-history-bet-single,
+    .betting-history-bet-multiple,
+    .betting-history-bet-system {
+      background: transparent;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid $greenGradient1;
+      border-radius: 10px;
+      color: $white;
+      &.WON,
+      &.HALF_WON {
+        border-top: 5px solid $green;
+      }
+      &.OPEN {
+        border-top: 5px solid $yellow;
+      }
+      &.LOST,
+      &.HALF_LOST {
+        border-top: 5px solid $red;
+      }
+      &.DRAW,
+      &.CASHED_OUT,
+      &.VOID,
+      &.CANCELLED {
+        border-top: 5px solid $grayDarker;
+      }
+      .text-WON,
+      .text-HALF_WON {
+        color: $green;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .text-OPEN {
+        color: $yellow;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .text-LOST,
+      .text-HALF_LOST {
+        color: $red;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .text-DRAW,
+      .text-CASHED_OUT,
+      .text-VOID,
+      .text-CANCELLED {
+        color: $grayDarker;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    .betting-history-bet-multiple,
+    .betting-history-bet-system {
+      .team-list {
+        display: flex;
+        .tab-index {
+          width: 30px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          color: $white;
+          &.WON,
+          &.HALF_WON {
+            background: $green;
+          }
+          &.OPEN {
+            background: $yellow;
+          }
+          &.LOST,
+          &.HALF_LOST {
+            background: $red;
+          }
+          &.DRAW,
+          &.CASHED_OUT,
+          &.VOID,
+          &.CANCELLED {
+            background: $grayDarker;
+          }
+        }
+        .fw-bold {
+          font-weight: bold;
+        }
+      }
+    }
+    .t-detail {
+      color: var(--color-fg);
+      span {
+        color: var(--color-fg);
+      }
+    }
+    .betting-history-bet-single p,
+    .betting-history-bet-multiple p,
+    .betting-history-bet-system p {
+      color: var(--color-fg);
+    }
+    .border-right {
+      border-right: 1px dotted $grayLight;
+    }
+    .border-top {
+      border-top: 1px dotted $grayLight;
+    }
+    .betting-history-bet {
+      position: relative;
+      background: $white;
+      margin: 5px;
+      .selection {
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+
+        .status-icon {
+          width: 30px;
+          // align-self: center;
+          text-align: center;
+          overflow: hidden;
+          border-left: 1px solid $black;
+          border-right: 1px solid $black;
+          .icon-bets {
+            display: flex;
+            align-items: center;
+            height: 100%;
+          }
+        }
+        .content {
+          width: calc(100% - 30px);
+          min-height: 40px;
+          display: flex;
+          padding: 0 5px;
+          .pick {
+            flex-basis: 25%;
+            align-self: center;
+            overflow: hidden;
+          }
+          .price {
+            flex-basis: 10%;
+            text-align: end;
+            align-self: center;
+            overflow: hidden;
+          }
+          .event {
+            flex-basis: 65%;
+            display: flex;
+            .live-icon {
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              align-self: center;
+            }
+            .sport-icon {
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              align-self: center;
+            }
+            .event-name {
+              align-self: center;
+              width: 60%;
+            }
+            .marke {
+              text-align: end;
+              align-self: center;
+            }
+          }
+        }
+        .betting-historyBet-footer {
+          width: calc(100% - 30px);
+          min-height: 40px;
+          display: flex;
+          justify-content: space-between;
+          .status-line {
+            display: flex;
+          }
+          .money-line {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint(992px, max) {
+    .page-active {
+      display: none;
+    }
+  }
+
+  @include breakpoint(992px, min) {
+    .card-body {
+      display: none;
+    }
+  }
+  .self-exclusion {
+    background-color: var(--color-bg-accountpage);
+    padding: 20px;
+    height: 100%;
+    border-radius: 11px;
+    color: var(--color-fg);
+    .title-menu {
+      font-size: 20px;
+      font-family: "Montserrat-Medium";
+    }
+    .title{
+      font-size: 18px;
+      font-family: "Montserrat-Medium";
+    }
+    form{
+      label{
+        font-size: 16px;
+        font-family: "Montserrat-Medium";
+      }
+      select.form-control{
+        height: 45px;
+      }
+    }
+    .layout {
+      background-color: $grayWhiteSmoke;
+      color: $grayDark;
+      margin-bottom: 15px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  .no-login {
+    background-color: $grayWhiteSmoke;
+    color: $grayDark;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .select-1 {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    background-image: url(/static/images/RegisterPage_DropDown.png);
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    padding-right: 1.5em;
+    background-size: 10px;
+    background-color: #fff;
+    color: #000;
+  }
+
+  .dropdownPrefix {
+    .select-box {
+      height: 36px;
+    }
+
+    .brd {
+      border: 1px solid #e2eded;
+      border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+    }
+
+    #info {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      color: #2d3667;
+      font-size: 16px;
+      text-align: center;
+      padding: 14px;
+      background-color: #f3f9f9;
+    }
+
+    #app-cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 300px;
+      height: 42px;
+      margin: 100px auto 0 auto;
+    }
+
+    #select-button {
+      position: relative;
+      height: 100%;
+      padding: 5px 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    #options-view-button,
+    #options-view-button-profile,
+    #options-view-button-menuleft {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .selected-value {
+      font-size: 14px;
+    }
+
+    #chevrons {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 12px;
+      padding: 9px 14px;
+    }
+
+    #chevrons i {
+      display: block;
+      height: 50%;
+      color: #d1dede;
+      font-size: 12px;
+      text-align: right;
+    }
+
+    #options-view-button:checked + #select-button #chevrons i {
+      color: #2d3667;
+    }
+    #options-view-button-profile:checked + #select-button #chevrons i {
+      color: #2d3667;
+    }
+    #options-view-button-menuleft:checked + #select-button #chevrons i {
+      color: #2d3667;
+    }
+
+    .options {
+      position: absolute;
+      left: 0;
+      width: 250px;
+    }
+
+    #options {
+      position: absolute;
+      top: 42px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 4px;
+      z-index: 999;
+      max-height: 400px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    #options-view-button:checked ~ #options {
+      border: 1px solid #e2eded;
+      border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+    }
+    #options-view-button-profile:checked ~ #options {
+      border: 1px solid #e2eded;
+      border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+    }
+    #options-view-button-menuleft:checked ~ #options {
+      border: 1px solid #e2eded;
+      border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+    }
+
+    .option {
+      position: relative;
+      line-height: 1;
+      transition: 0.3s ease all;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .option img {
+      position: absolute;
+      left: 14px;
+      padding: 0;
+      display: none;
+    }
+
+    #options-view-button:checked ~ #options .option img {
+      display: block;
+      padding: 12px 0;
+    }
+    #options-view-button-profile:checked ~ #options .option img {
+      display: block;
+      padding: 12px 0;
+    }
+    #options-view-button-menuleft:checked ~ #options .option img {
+      display: block;
+      padding: 12px 0;
+    }
+
+    .label {
+      display: none;
+      padding: 0;
+      margin-left: 27px;
+    }
+
+    #options-view-button:checked ~ #options .label {
+      display: block;
+      padding: 12px 14px;
+    }
+    #options-view-button-profile:checked ~ #options .label {
+      display: block;
+      padding: 12px 14px;
+    }
+    #options-view-button-menuleft:checked ~ #options .label {
+      display: block;
+      padding: 12px 14px;
+    }
+
+    .s-c {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+    }
+
+    .s-c.top {
+      top: 0;
+    }
+
+    .s-c.bottom {
+      bottom: 0;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .s-c:hover ~ i {
+      color: #fff;
+      opacity: 0;
+    }
+
+    .s-c:hover {
+      height: 100%;
+      z-index: 1;
+    }
+
+    .s-c.bottom:hover + i {
+      bottom: -25px;
+      animation: moveup 0.3s ease 0.1s forwards;
+    }
+
+    .s-c.top:hover ~ i {
+      top: -25px;
+      animation: movedown 0.3s ease 0.1s forwards;
+    }
+
+    @keyframes moveup {
+      0% {
+        bottom: -25px;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+
+    @keyframes movedown {
+      0% {
+        top: -25px;
+        opacity: 0;
+      }
+      100% {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    .label {
+      color: $grayDarker;
+      transition: 0.3s ease all;
+    }
+
+    .opt-val {
+      position: absolute;
+      left: 14px;
+      width: 217px;
+      height: 21px;
+      opacity: 0;
+      background-color: #fff;
+      transform: scale(0);
+    }
+
+    .option input[type="radio"]:checked ~ .opt-val {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .option input[type="radio"]:checked ~ i {
+      top: 0;
+      bottom: auto;
+      opacity: 1;
+      animation: unset;
+    }
+
+    .option input[type="radio"]:checked ~ i,
+    .option input[type="radio"]:checked ~ .label {
+      color: #fff;
+    }
+
+    .option input[type="radio"]:checked ~ .label:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    #option-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 40px;
+      transition: 0.3s ease all;
+      z-index: 1;
+      display: none;
+    }
+
+    #options-view-button:checked ~ #options #option-bg {
+      display: block;
+    }
+    #options-view-button-profile:checked ~ #options #option-bg {
+      display: block;
+    }
+    #options-view-button-menuleft:checked ~ #options #option-bg {
+      display: block;
+    }
+
+    #ytd-url {
+      display: block;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      padding: 10px 14px;
+      margin: 20px;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+      background-color: #143240;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
+    }
+  }
+  .transaction-history {
+    background-color: var(--color-bg-accountpage);
+    padding: 20px;
+    height: 100%;
+    border-radius: 11px;
+    color: var(--color-fg);
+    .title-menu {
+      font-size: 20px;
+      font-family: "Montserrat-Medium";
+    }
+    form {
+      .form-control {
+        border: 1px solid $greenGradient1;
+        border-radius: 10px;
+        background: transparent;
+        height: 45px;
+        color: var(--color-fg);
+
+        // opacity: 0.75;
+        &:focus {
+          color: var(--color-fg);
+        }
+      }
+      .table-bordered th {
+        font-family: "Montserrat-Medium";
+      }
+      .table-bordered th,
+      td {
+        border: 0;
+      }
+      select.form-control {   
+        option {
+          color: $black;
+        }     
+      }
+    }
+    button.btn {
+      font-family: "Montserrat-SemiBold";
+      font-size: 16px;
+    }
+    input {
+      border: 1px solid $greenGradient1;
+      border-radius: 10px;
+      background: transparent;
+      height: 45px;
+      color: var(--color-fg);
+    }
+  }
+}

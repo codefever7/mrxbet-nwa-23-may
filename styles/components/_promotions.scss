@@ -1,0 +1,391 @@
+@import "../core/var";
+
+section.promotions {
+    .navbar-expand {
+        margin-left: -15px;
+        margin-right: -15px;
+        .nav-promotions {
+            padding-left: 10px;
+            justify-content: flex-start;
+
+            a {
+                margin-right: 5px;
+                border: 1px solid $white;
+                background: $black;
+                color: $white;
+            }
+            a.active, a:hover{
+                background: $red;
+            }
+            @media (max-width: 451px){
+                padding: 0;
+            }
+        }
+    }
+    .card-promotions {
+        margin: 10px;
+        color: $white;
+        // min-height: 280px;
+
+        @include breakpoint(mobile, max) {
+            // min-height: 200px;
+        }
+
+        .row {
+            position: relative;
+
+            picture {
+                width: 100%;
+                height: auto;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+            }
+            .col-promotion {
+                position: absolute;
+                left: 0;
+                overflow: hidden;
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.01));
+                padding-top: 10%;
+                height: 100%;
+                border-radius: 10px;
+                // min-height: 280px;
+                
+                @include breakpoint(tablet, max) {
+                    // min-height: 200px;
+                    padding-top: 5%;
+                    //===
+                    padding-right: 0px;
+                    margin-right: 0px;
+                    text-shadow: 0.05em 0.05em 0.015em black;
+                }
+
+                h5, h3 {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    -webkit-box-orient: inherit;
+                    font-weight: 600;
+                }
+                
+                @media (max-width: 768px){
+                    // padding: 5% 20px;
+                }
+                @media (max-width: 451px){
+                    // padding: 25px 20px;
+                }
+            }
+            .promotion-content {
+                margin: 10px 0;
+                overflow: hidden;
+                line-height: 1.5em;
+                height: 6em;
+                // margin-right: 75px;
+                text-shadow: 0.05em 0.05em 0.15em black;
+                @include breakpoint(mobile, max) {
+                    height: 4.5em;
+                }
+                @include breakpoint(mobile-xs, max) {
+                    line-height: 1.2em;
+                    height: 3.6em;
+                }
+                p {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    font-size: 16px;
+                    @include breakpoint(mobile, max) {
+                        -webkit-line-clamp: 3;
+                    }
+                }
+            }
+        }
+    }
+    .arrow {
+        width: 25px;
+        margin-left: 15px;
+        padding-bottom: 5px;
+    }
+    .btn-sport {
+        position: absolute;
+        padding: 5px 25px;
+        bottom: 10%;
+        background-color: $green;
+        color: $white;
+        text-decoration: none;
+        font-size: 16px; //14px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
+        .jb-icon {
+            margin-left: 15px;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+    }
+}
+
+section.promotions-details {
+    .navbar-expand {
+        margin-left: -15px;
+        margin-right: -15px;
+        .nav-promotions {
+            justify-content: flex-start;
+
+            a {
+                margin-right: 5px;
+                border: 1px solid $white;
+                background: $black;
+                color: $white;
+            }
+            a.active {
+                background: $red;
+            }
+        }
+    }
+    .container-detail {
+        margin-top: 10px;
+        .row {
+            .main-promotions {
+                img {
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+                @include breakpoint(ipad, min) {
+                    flex: 0 0 58.33333%;
+                    max-width: 58.33333%;
+                }
+                @include breakpoint(laptop, min) {
+                    flex: 0 0 66.66667%;
+                    max-width: 66.66667%;
+                }
+                .row-detail {
+                    .col {
+                        margin-bottom: 40px;
+                        h3 {
+                            margin: 20px 0;
+                        }
+                        .detail-content {
+                            margin: 20px 0;
+                        }
+                    }
+                }
+                .row-terms {
+                    .terms-content {
+                        margin-top: 20px;
+                    }
+                }
+            }
+            .other-promotions {
+                @include breakpoint(ipad, min) {
+                    flex: 0 0 41.66667%;
+                    max-width: 41.66667%;
+                }
+                @include breakpoint(laptop, min) {
+                    flex: 0 0 33.33333%;
+                    max-width: 33.33333%;
+                }
+                h3 {
+                    margin: 20px 0;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+                .other {
+                    position: relative;
+                    margin-bottom: 20px;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                    .row {
+                        picture img {
+                            border-radius: 10px;
+                        }
+                        .card-other {
+                            color: $white;
+                            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.01));
+                            padding: 5% 20px;
+                            padding-right: 5px;
+                            height: 100%;
+                            position: absolute;
+                            border-radius: 10px;
+
+                            @include breakpoint(ipad, min) {
+                                flex: 0 0 100%;
+                                max-width: 100%;
+                                padding: 5px;
+                                h2 {
+                                    font-size: 15px;
+                                }
+                            }
+                            @include breakpoint(laptop, min) {
+                                flex: 0 0 66.66667%;
+                                max-width: 66.66667%;
+                                padding: 5% 20px;
+                                h2 {
+                                    font-size: 20px;
+                                }
+                            }
+                            .other-content {
+                                margin: 10px 0;
+                                overflow: hidden;
+                                line-height: 1.5em;
+                                height: 6em;
+                                @include breakpoint(ipad, min) {
+                                    line-height: 16px;
+                                }
+                                @include breakpoint(laptop, min) {
+                                    line-height: 1.5em;
+                                }
+                                @include breakpoint(mobile, max) {
+                                    height: 4.5em;
+                                }
+                                @include breakpoint(mobile-xs, max) {
+                                    line-height: 1.2em;
+                                    height: 3.6em;
+                                }
+                                p {
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 4;
+                                    overflow: hidden;
+                                    -webkit-box-orient: vertical;
+                                    @include breakpoint(ipad, min) {
+                                        font-size: 14px; //12px;
+                                    }
+                                    @include breakpoint(laptop, min) {
+                                        font-size: 16px; //14px;
+                                        
+                                    }
+                                    @include breakpoint(mobile, max) {
+                                        -webkit-line-clamp: 3;
+                                    }
+                                    span{
+                                        @include breakpoint(ipad, min) {
+                                            font-size: 14px; //12px;
+                                        }
+                                        @include breakpoint(laptop, min) {
+                                            font-size: 16px; //14px;
+                                        }
+                                    }
+                                }
+                            }
+                            .btn-join {
+                                bottom: 20px;
+                                font-size: 14px;
+                                border-radius: 10px;
+                                .jb-icon {
+                                    margin-left: 15px;
+                                    padding-bottom: 5px;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                        picture img {
+                            // min-height: 230px;
+                        }
+                    }
+                } 
+            }
+            .card-promotions {
+                margin: 10px;
+                color: $white;
+                // min-height: 280px;
+        
+                @include breakpoint(mobile, max) {
+                    // min-height: 200px;
+                }
+        
+                .row {
+                    position: relative;
+
+                    picture img {
+                        border-radius: 10px;
+                    }
+                    .col-promotion {
+                        position: absolute;
+                        left: 0;
+                        overflow: hidden;
+                        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.01));
+                        padding-top: 10%;
+                        height: 100%;
+                        border-radius: 10px;
+                        // min-height: 280px;
+                        
+                        @include breakpoint(tablet, max) {
+                            // min-height: 200px;
+                            padding-top: 5%;
+                            //===
+                            padding-right: 60px;
+                            margin-right: 60px;
+                            text-shadow: 0.05em 0.05em 0.015em black;
+                        }
+        
+                        h5, h3 {
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            overflow: hidden;
+                            -webkit-box-orient: inherit;
+                            font-weight: 600;
+                        }
+                        
+                        @media (max-width: 768px){
+                            // padding: 5% 20px;
+                        }
+                        @media (max-width: 451px){
+                            // padding: 25px 20px;
+                        }
+                    }
+                    .promotion-content {
+                        margin: 10px 0;
+                        overflow: hidden;
+                        line-height: 1.5em;
+                        height: 6em;
+                        margin-right: 75px;
+                        text-shadow: 0.05em 0.05em 0.15em black;
+                        @include breakpoint(mobile, max) {
+                            height: 4.5em;
+                        }
+                        @include breakpoint(mobile-xs, max) {
+                            line-height: 1.2em;
+                            height: 3.6em;
+                        }
+                        p {
+                            display: -webkit-box;
+                            -webkit-line-clamp: 4;
+                            overflow: hidden;
+                            -webkit-box-orient: vertical;
+                            font-size: 16px;
+                            @include breakpoint(mobile, max) {
+                                -webkit-line-clamp: 3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .arrow {
+        width: 25px;
+        margin-left: 15px;
+        padding-bottom: 5px;
+    }
+    .btn-join {
+        position: absolute;
+        padding: 5px 20px;
+        background-color: $green;
+        color: $white !important;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        .jb-icon {
+            margin-left: 15px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    }
+}

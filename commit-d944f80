@@ -1,0 +1,20 @@
+From d944f8080652698c51658a81d86e58c6b4126215 Mon Sep 17 00:00:00 2001
+From: KuanYu <abkwangno@gmail.com>
+Date: Sat, 16 Mar 2024 21:31:16 +0700
+Subject: Revert "decrease font on username"
+
+This reverts commit 7c46d5e8300dd012689979b8313458c228bcab43.
+
+diff --git a/styles/core/custom.scss b/styles/core/custom.scss
+index 8697c47..4eeb32a 100644
+--- a/styles/core/custom.scss
++++ b/styles/core/custom.scss
+@@ -1964,7 +1964,7 @@ section.account {
+                     }
+ 
+                     .Fullname {
+-                        font-size: 24px; //38px;
++                        font-size: 28px; //38px;
+                         font-family: Poppins-Medium;
+                         padding-left: 10px;
+                     }

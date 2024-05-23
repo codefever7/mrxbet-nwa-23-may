@@ -1,0 +1,97 @@
+@import "../core/var";
+$jpGray: #b2b2b2;
+$jpGold: #eab109;
+$jpRed: $green;
+$jpBorder: #f4f4f4;
+
+section.jackpots-page {
+  h2 {
+    margin-top: 10px;
+  }
+
+  .jackpots-title {
+    font-size: 20px;
+    padding: 20px 0 5px;
+    span {
+      color: $jpGold;
+    }
+  }
+
+  .jackpots-form {
+    background-color: $white;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+
+    .row {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: solid 1px $jpBorder;
+
+      .jp-image {
+        width: 100%;
+        max-width: 150px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .jp-title {
+        font-size: 22px;
+      }
+
+      .jp-description {
+        color: $jpGray;
+        font-size: 14px;
+      }
+
+      .jp-price {
+        float: right;
+        font-size: 1em;
+        margin-right: 10px;
+      }
+
+      .jp-button {
+        background-color: $jpRed;
+        border-color: $jpRed;
+        color: $white;
+        outline: 0;
+        padding: 3px 8px;
+        display: inline-block;
+        float: right;
+      }
+
+      .jp-top {
+        display: none;
+      }
+    }
+
+    .row:last-child {
+      border-bottom: 0;
+      padding-bottom: 30px;
+
+      .jp-top {
+        display: block;
+        position: relative;
+
+        span {
+          img {
+            width: 16px;
+            float: left;
+            margin-top: 2px;
+            margin-right: 5px;
+          }
+          position: absolute;
+          background-color: $jpGold;
+          border-color: $jpGold;
+          color: $white;
+          outline: 0;
+          padding: 3px 8px;
+          bottom: -36px;
+          left: -15px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

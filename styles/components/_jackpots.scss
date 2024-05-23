@@ -1,0 +1,185 @@
+@import "../core/var";
+
+$textColor_1: $white;
+$borderButtonColor_1: $yellow;
+$buttonColor_1: $grayDark;
+$headerTextColor_1: $white;
+$btnColor_1: $green;
+$btnTextColor_1: $white;
+section.bottom-sliders {
+  .jackpots {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    .content {
+      color: #fff;
+      align-items: center;
+      margin: 0 0 10px 0;
+      img {
+        margin-bottom: 0.5rem;
+        margin-right: 15px;
+      }
+    }
+    .slide {
+      height: 200px;
+      .carousel-inner {
+        height: 100%;
+      }
+      .jackpots-layout {
+        color: $textColor_1;
+        text-align: -webkit-center;
+
+        h2 {
+          margin-bottom: 30px;
+          margin-top: 15px;
+        }
+        a {
+          background-color: $buttonColor_1;
+          border: 2px solid $borderButtonColor_1;
+          padding: 10px 30px;
+          color: $textColor_1;
+          text-decoration: none;
+        }
+      }
+    }
+    img {
+      max-width: 80px;
+    }
+    .carousel-indicators {
+      display: none;
+    }
+  }
+}
+$backgroundMultipleColor: $grayDark;
+section.jackpots-multiple {
+  .jackpots {
+    background-color: $backgroundMultipleColor;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    h2 {
+      color: $headerTextColor_1;
+      font-weight: 600;
+      @include breakpoint(mobile, max) {
+        text-align: center;
+      }
+    }
+    .align-right {
+      text-align: right;
+      @include breakpoint(mobile, max) {
+        text-align: center;
+      }
+    }
+    .btn-all {
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 0.375rem 2.75rem;
+      font-size: 14px;
+      line-height: 1.5;
+      background: $btnColor_1;
+      color: $btnTextColor_1;
+    }
+    .carousel {
+      .slider {
+        background: $backgroundMultipleColor;
+      }
+      .slider-wrapper {
+        width: 90%;
+      }
+      .control-dots {
+        display: none;
+      }
+      .control-prev:before {
+        position: absolute;
+        margin-top: -5px;
+        left: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        font-family: "jb-font";
+        content: "\e813";
+      }
+      .control-prev:after {
+        position: absolute;
+        margin-top: -1px;
+        left: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: $grayLight;
+        content: "";
+        z-index: -1;
+      }
+      .control-next:before {
+        position: absolute;
+        margin-top: -5px;
+        right: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        font-family: "jb-font";
+        content: "\e814";
+        // z-index: 1;
+      }
+      .control-next:after {
+        position: absolute;
+        margin-top: -1px;
+        right: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: $grayLight;
+        content: "";
+        z-index: -1;
+      }
+    }
+    .group-item {
+      display: flex;
+      justify-content: center;
+      background-color: $backgroundMultipleColor;
+      .item {
+        width: 20%;
+        margin: 3px;
+        border: 1px solid $white;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include breakpoint(mobile, max) {
+          width: 40%;
+        }
+        .content-img {
+          justify-content: center;
+          display: flex;
+          img {
+            width: 120px;
+            height: 120px;
+          }
+        }
+        .content-text {
+          background-color: $grayDarker;
+          padding-bottom: 10px;
+          padding-top: 10px;
+          .title {
+            color: $white;
+          }
+          .price {
+            color: $yellow;
+          }
+          p {
+            margin: 0;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

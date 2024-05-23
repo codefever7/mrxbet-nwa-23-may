@@ -1,0 +1,486 @@
+@import "../core/var";
+
+section.sport-mini {
+  .box-header {
+      margin-bottom: 20px;
+      .header-games {
+          display: flex;
+          color: $white;
+          .header-img {
+              width: auto;
+              height: 30px;
+              max-width: 100%;
+              align-self: center;
+          }
+      }
+      h2{
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+      }
+  }
+  .container > div {
+    &:nth-child(1) {
+      @include breakpoint(mobile, max) {
+        padding-bottom: 16px !important;
+      }
+    }
+    &:nth-child(2) > div {
+      &:nth-child(1){
+        @include breakpoint(ipad, max) {
+          padding: 0px 16px 16px 16px !important;
+        }
+        @include breakpoint(mobile, max) {
+          padding-right:8px !important;
+          padding-bottom: 8px !important;
+        }
+        @include breakpoint(mobile-sm, max) {
+          padding-right:16px !important;
+          padding-bottom: 16px !important;
+        }
+      }
+      &:nth-child(2){
+        @include breakpoint(ipad, max) {
+          padding: 0px 16px 8px 16px !important;
+        }
+        @include breakpoint(mobile, max) {
+          padding-left:8px !important;
+          padding-bottom: 8px !important;
+        }
+        @include breakpoint(mobile-sm, max) {
+          padding-left:16px !important;
+          padding-bottom: 8px !important;
+        }
+      }
+    }
+  }
+  .container > div.row:last-child {
+    @include breakpoint(laptop, max) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .container > div.row:last-child > div{
+    &:nth-child(1) {
+      @include breakpoint(laptop, max) {
+        padding: 0px 8px 8px 0px !important;
+        width: 25%;
+      }
+      @include breakpoint(tablet, max) {
+        // padding: 0px 8px 8px 0px !important;
+        width: 50%;
+      }
+    }
+    &:nth-child(2) {
+      @include breakpoint(laptop, max) {
+        padding: 0px 8px 8px 8px !important;
+        width: 25%;
+      }
+      @include breakpoint(tablet, max) {
+        // padding: 0px 0px 8px 8px !important;
+        width: 50%;
+      }
+      @include breakpoint(ipad, max) {
+        padding: 0px 0px 8px 8px !important;
+        width: 50%;
+      }
+    }
+    &:nth-child(3) {
+      @include breakpoint(laptop, max) {
+        padding: 0px 8px 8px 8px !important;
+        width: 25%;
+      }
+      @include breakpoint(tablet, max) {
+        padding: 0px 0px 8px 8px !important;
+        // padding: 8px 8px 8px 0px !important;
+        width: 50%;
+      }
+      @include breakpoint(ipad, max) {
+        padding: 8px 8px 8px 0px !important;
+        width: 50%;
+      }
+    }
+    &:nth-child(4) {
+      @include breakpoint(laptop, max) {
+        padding: 0px 0px 8px 8px !important;
+        width: 25%;
+      }
+      @include breakpoint(tablet, max) {
+        padding: 8px 8px 8px 0px !important;
+        // padding: 8px 0px 8px 8px !important;
+        width: 50%;
+      }
+      @include breakpoint(ipad, max) {
+        padding: 8px 0px 8px 8px !important;
+        width: 50%;
+      }
+    }
+    &:nth-child(5) {
+      @include breakpoint(laptop, max) {
+        padding: 8px 0px 0px 0px !important;
+        width: 100%;
+      }
+      @include breakpoint(tablet, max) {
+        padding: 8px 0px 0px 8px !important;
+        // padding: 8px 0px 0px 0px !important;
+        width: 50%;
+      }
+      @include breakpoint(ipad, max) {
+        padding: 8px 0px 0px 0px !important;
+        width: 50%;
+      }
+    }
+  }
+  .content-matchs {
+    z-index: 3;
+    padding-bottom: 15px;
+  }
+  h1{
+    padding-bottom: 10px;
+    font-weight: 600;
+    @include breakpoint(mobile, max) {
+      font-size: 28px;
+    }
+    @include breakpoint(mobile-sm, max) {
+      font-size: 22px;
+    }
+    z-index: 2; 
+  }
+  h3{
+    font-size: 40px;
+    font-weight: 600;
+    @include breakpoint(mobile, max) {
+      font-size: 18px;
+    }
+    @include breakpoint(mobile-sm, max) {
+      font-size: 16px;
+    }
+    z-index: 2;
+  }
+  a{
+    z-index: 3;
+    color: $white;
+  }
+  img.cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .box-sports-lg {
+    min-height: 350px;
+    position: relative;
+    @include breakpoint(mobile, max) {
+      min-height: 300px;
+      padding: 0px 8px 8px 0px !important;
+    }
+    .content {
+      padding: 10px;
+      // min-height: 350px;
+      // position: absolute;
+      // right: 0;
+      // bottom: 0;
+      // left: 0;
+      // top: 0;
+      // z-index: 10;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0)
+      );
+      @include breakpoint(mobile, max) {
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.1)
+        );
+        min-height: 300px;
+        .participantName, .datetime {
+          font-size: 12px;
+        }
+      }
+      button {
+        min-width: 180px;
+        font-size: 14px;
+        @include breakpoint(mobile-sm, max) {
+          min-width: 124px;
+          font-size: 10px;
+        }
+        border-color: $green;
+        background: $green;
+        border-radius: 5px;
+        z-index: 2;
+      }
+      button.odds-button {
+        p{
+          font-size: 14px;
+          @include breakpoint(mobile, max) {
+            font-size: 11px !important;
+            min-width: 25%;
+          }
+        }
+        background-color: $grayDarker;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        border: 1px solid $grayDarker;
+        &:focus {
+          background-color: $grayDarker;
+          border: 1px solid $grayDarker;
+        }
+        &:hover {
+          background-color: $grayDarker;
+          border: 1px solid $grayDarker;
+        }
+        @include breakpoint(mobile, max) {
+          min-width: 120px;
+          font-size: 14px;
+        }
+        @include breakpoint(mobile-sm, max) {
+          min-width: 90px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .box-sports-md {
+    position: relative;
+    min-height: 200px;
+    @include breakpoint(mobile, max) {
+      min-height: 140px;
+    }
+    @include breakpoint(mobile-sm, max) {
+      min-height: 94px;
+    }
+    .content {
+      padding: 10px;
+      @include breakpoint(mobile-sm, max) {
+        padding: 5px 25px 5px 25px;
+      }
+      min-height: 200px;
+      @include breakpoint(mobile, max) {
+        min-height: 140px;
+      }
+      @include breakpoint(mobile-sm, max) {
+        min-height: 94px;
+      }
+      button{
+        min-width: 180px;
+        font-size: 14px;
+        @include breakpoint(mobile-sm, max) {
+          min-width: 124px;
+          font-size: 10px;
+        }
+        border-color: $green;
+        background: $green;
+        border-radius: 5px;
+        z-index: 2;
+      }
+    }
+  }
+  .box-sports-sm {
+    position: relative;
+    min-height: 200px;
+    @include breakpoint(mobile, max) {
+      min-height: 140px;
+    }
+    @include breakpoint(mobile-sm, max) {
+      min-height: 94px;
+    }
+    .content {
+      padding: 10px;
+      @include breakpoint(mobile-sm, max) {
+        padding: 25px 25px 5px 25px;
+      }
+      min-height: 200px;
+      @include breakpoint(mobile, max) {
+        min-height: 140px;
+      }
+      @include breakpoint(mobile-sm, max) {
+        min-height: 94px;
+      }
+      button{
+        min-width: 180px;
+        font-size: 14px;
+        @include breakpoint(mobile-sm, max) {
+          min-width: 124px;
+          font-size: 10px;
+        }
+        border-color: $green;
+        background: $green;
+        border-radius: 5px;
+        z-index: 2;
+      }
+    }
+  }
+
+  .Anchor{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: underline;
+    font-size: 12px;
+    color: $grayLight;
+  }
+  .MatchList__Title{
+    color: $grayLight;
+  }
+  .odds-title{
+    font-size: 12px;
+    color: $grayLight;
+  }
+  .noOdds {
+    cursor: not-allowed !important;
+  }
+  .main {
+    padding: 25px 0;
+    background-color: $grayDark;
+    color: $white;
+    @include breakpoint(laptop, min) {
+      min-height: 400px;
+    }
+    .header {
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      @include breakpoint(mobile, max) {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+      }
+      margin-bottom: 20px;
+      .header-img {
+        width: auto;
+        height: 30px;
+        max-width: 100%;
+        align-self: center;
+      }
+    }
+    .tab {
+      background-color: $black;
+      margin-left: 15px;
+      margin-right: 15px;
+      @include breakpoint(mobile, max) {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+      }
+      .tabbar {
+        border-bottom: 3px solid $gray2;
+        color: $gray2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: $grayDarker;
+          color: $white;
+        }
+      }
+      .active {
+        color: $white;
+        background-color: $redDark;
+        border-bottom: 3px solid $white;
+
+        &:hover {
+          background-color: $redDark;
+        }
+      }
+      .active:after {
+        left: calc(50% - 8px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 6px 8px;
+        border-color: transparent transparent rgba(255, 255, 255, 1) transparent;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        transition: all 0.3s ease;
+      }
+      p {
+        font-weight: normal;
+      }
+    }
+    .tournament {
+      background-color: rgba(14, 14, 17, 0.1);
+      margin-top: 5px;
+      padding: 0px;
+      font-size: 14px;
+    }
+    .tournament-list {
+      background-color: $gRtpGray;
+      margin-bottom: 1px;
+      .odds-button {
+        p{
+         font-size: 14px;
+          @include breakpoint(mobile, max) {
+            font-size: 11px !important;
+          }
+        }
+        background-color: $grayDark;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        border: 1px solid $gray2;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+            background-color: $grayDarker;
+          }
+          @include breakpoint(mobile, max) {
+            p{
+              font-size: 11px !important;
+            }
+          }
+      }
+    }
+    .time{
+        color: $gray2;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+        font-size: 11px;
+    }
+    .text-m{
+      display: block;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+      font-size: 14px;
+    }
+    @include breakpoint(mobile, max) {
+      .pl-sm2{
+        padding-left:2px !important;
+      }
+      .pr-sm2{
+        padding-right:2px !important;
+      }
+      .pl-sm5{
+        padding-left:5px !important;
+      }
+      .pr-sm5{
+        padding-right:5px !important;
+      }
+      .p-sm0{
+        padding:0 !important;
+      }
+    }
+  }
+}

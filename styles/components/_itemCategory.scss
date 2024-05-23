@@ -1,0 +1,385 @@
+@import "../core/var";
+
+$backgroundColor: $grayDark;
+$textSumColor: $grayLight;
+$textCategoryColor: $grayLight;
+$linkColor: $grayLight;
+$linkHoverColor: $red;
+$backgroundSumColor: $yellow;
+section.category-games {
+  .category {
+    background-color: $backgroundColor;
+    padding-top: 25px;
+    .text-sum {
+      color: $textSumColor;
+      align-self: center;
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        @include breakpoint(mobile, max) {
+          text-align: center;
+        }
+      }
+    }
+
+    form {
+      input {
+        border: 2px solid #fff;
+        border-radius: 0;
+        background-clip: unset;
+      }
+      input::-webkit-input-placeholder {
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+
+      input:-moz-placeholder {
+        /* Firefox 18- */
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+
+      input::-moz-placeholder {
+        /* Firefox 19+ */
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+
+      input:-ms-input-placeholder {
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+      .input-group-prepend {
+        position: absolute;
+        top: 0;
+        right: 1px;
+        bottom: 0;
+        align-items: center;
+        z-index: 3;
+        .submit {
+          padding: 5px;
+          color: $black;
+          background-color: $green;
+          border-color: $green;
+          .jb-icon.search {
+            padding: 3px;
+            font-size: 22px;
+            font-weight: bold;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  .multi-carousel {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    .multi-carousel-inner {
+      transition: 1s ease all;
+      float: left;
+      .item {
+        float: left;
+        position: relative;
+      }
+      .item > .pad15 {
+        text-align: center;
+        padding: 5px 15px;
+        color: $textCategoryColor;
+        a {
+          color: $linkColor;
+        }
+        a:hover, a:hover .jb-icon{
+          color: $linkHoverColor;
+        }
+        i.jb-icon {
+          font-size: 40px;
+          line-height: 45px;
+          color: $grayLight;
+        }
+        .sum-game {
+          position: absolute;
+          top: 4px;
+          left: 50px;
+          background: $backgroundSumColor;
+          color: $black;
+          font-size: 10px;
+          padding: 2px 2px;
+          max-width: 40px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .item .pad15.active a p, .item .pad15.active a i {
+        color: $linkHoverColor;
+      }
+    }
+    .leftLst,
+    .rightLst {
+      position: absolute;
+      border-radius: 50%;
+      top: calc(50% - 30px);
+      .jb-icon {
+        font-size: 32px;
+      }
+    }
+    .leftLst {
+      left: -30px;
+      @include breakpoint(mobile, max) {
+        left: 0px;
+      }
+      
+    }
+    .rightLst {
+      right: -30px;
+      @include breakpoint(mobile, max) {
+        right: 0px;
+      }
+    }
+    .leftLst.over,
+    .rightLst.over {
+      pointer-events: none;
+      background: none;
+      border: 0;
+    }
+    button {
+      background: none;
+      border: 0;
+    }
+    button:not(:disabled):not(.disabled):active {
+      background: none;
+      border: 0;
+    }
+    button:focus,
+    button:not(:disabled):not(.disabled):active:focus {
+      box-shadow: none;
+    }
+  }
+  .category-list {
+    background: transparent;
+    //padding-top: 25px;
+    .text-sum {
+      color: $textSumColor;
+      align-self: center;
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        @include breakpoint(mobile, max) {
+          text-align: center;
+        }
+      }
+    }
+    form {
+      input {
+        border: 2px solid #fff;
+        border-radius: 0;
+        background-clip: unset;     
+        background: #fff;
+        color: #000;   
+      }
+      input::-webkit-input-placeholder {
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+      input:-moz-placeholder {
+        /* Firefox 18- */
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+      input::-moz-placeholder {
+        /* Firefox 19+ */
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+      input:-ms-input-placeholder {
+        text-align: center;
+        @include breakpoint(mobile, max) {
+          text-align: left;
+        }
+      }
+      input::placeholder { 
+        color:    $black;
+      }
+      .input-group-prepend {
+        position: absolute;
+        top: 0;
+        right: 1px;
+        bottom: 0;
+        align-items: center;
+        z-index: 3;
+        .submit {
+          padding: 5px;
+          color: $black;
+          background-color: $green;
+          border-color: $green;
+          .jb-icon.search {
+            padding: 3px;
+            font-size: 22px;
+            font-weight: bold;
+            color: $white;
+          }
+        }
+      }
+    }
+    .carousel {
+      .slide {
+        background: $grayDark;
+        img {
+          width: auto;
+        }
+      }
+      .slider-wrapper {
+        width: 90%;
+      }
+      .control-dots {
+        display: none;
+      }
+      .control-prev:before {
+        position: absolute;
+        margin-top: -5px;
+        left: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        font-family: "jb-font";
+        content: "\e813";
+      }
+      .control-prev:after {
+        position: absolute;
+        margin-top: -1px;
+        left: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: $grayLight;
+        content: "";
+        z-index: -1;
+      }
+      .control-next:before {
+        position: absolute;
+        margin-top: -5px;
+        right: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        font-family: "jb-font";
+        content: "\e814";
+        // z-index: 1;
+      }
+      .control-next:after {
+        position: absolute;
+        margin-top: -1px;
+        right: 0;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: $grayLight;
+        content: "";
+        z-index: -1;
+      }
+      button.control-arrow {
+        top: -25px;
+      }
+    }
+    .group-item {
+      display: flex;
+      justify-content: center;
+      color: $grayLight;
+      .item {
+        width: 90px;
+        margin: 5px;
+        text-align: center;
+      }
+      .item > .pad15 {
+        text-align: center;
+        padding: 5px;
+        color: $textCategoryColor;
+        position: relative;
+        a {
+          color: $linkColor;
+          display: block;
+        }
+        a:hover {
+          color: $linkHoverColor;
+        }
+        i.jb-icon {
+          font-size: 40px;
+          line-height: 45px;
+          color: $grayLight;
+        }
+        .sum-game {
+          position: absolute;
+          top: 4px;
+          background: $backgroundSumColor;
+          color: $black;
+          font-size: 10px;
+          padding: 2px 2px;
+          max-width: 40px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          right: 0;
+        }
+      }
+      .item .pad15.active a p {
+        color: $red;
+      }
+    }
+    .CategoriesList {
+      .cate-card-item-13,
+      .cate-card-item-14 {
+        max-width: 1312px;
+      }
+
+      .cate-card-item-12,
+      .cate-card-item-11 {
+        max-width: 1152px;
+      }
+
+      .cate-card-item-10,
+      .cate-card-item-9 {
+        max-width: 960px;
+      }
+      .group-item {
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+        .CategoryItem{
+          width: 176px;
+          margin: 3px;
+          a{
+            padding: 5px 1px;
+            min-width: 155px;
+          }
+        }
+      }
+    }
+  }
+  .select-1 {    
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    background-image: url(/static/images/RegisterPage_DropDown.png);
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    padding-right: 1.5em;
+    background-size: 10px;
+    background-color: #fff;
+    color: #000;
+  }
+}

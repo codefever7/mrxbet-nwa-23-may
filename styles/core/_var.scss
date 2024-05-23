@@ -1,0 +1,134 @@
+/*Accent colors*/
+$blue: #049cdb;
+$green: #32A624; //#46a546;
+$greenLight: #47aa47;
+$redDark: #9d261d;
+$red: #d61b18;
+$yellow: #FFDD00;
+$yellowLight: #fdfb81;
+$yellow2: #E3BF2F;
+$orange: #f89406;
+$pink: #c3325f;
+$purple: #7a43b6;
+$black: #000;
+$gray: #a7a8a8;
+$grayVeryDark: #1a1a1a;
+$grayDarker: #4D4D4D;
+$grayDark: #1a1a1a;
+$gray2: #818181;
+$grayLight: #999;
+$grayLighter: #eee;
+$grayMenu: #666;
+$white: #fff;
+$grayWhiteSmoke:#d6d5d5;
+$gray3: #333333;
+$bg: #333;
+$gray-600: #6c757d;
+
+$gRtpGray: #3a393e;
+$gRtpGrayLight: #e6e6e6;
+
+/*Form states and alerts*/
+$warningText: #c09853;
+$warningBackground: #f3edd2;
+$errorText: #b94a48;
+$errorBackground: #f2dede;
+$successText: #468847;
+$successBackground: #dff0d8;
+$infoText: #3a87ad;
+$infoBackground: #d9edf7;
+
+$dpGreen: #22ad74;
+$dbGray: #808080;
+$dbRed: #d71b19;
+$wdGray: #e5e5e5;
+$wdGray2: #ebebeb;
+$logoutGray: #CBCBCB;
+
+$greenLogin: #32A624;
+$greenSky: #00FFAA;
+$greenDotSlide: #8EA993;
+$greenDarkHevy: #1B2D20;
+$bgDarkModal: #152218; //081009;
+
+$textGreen:#06F49A;
+$greenGradient1:#32A624;
+$greenGradient2:#00FFAA;
+
+$vendorBg: #152218;
+$categoriesBg: #152218;
+$inputBg: #0C180D;
+$lastbetOddBg: #1E3022;
+$lastbetEvenBg: #141F17;
+$accountBg: #152218;
+
+$textGray: #A7A8A8;
+
+/*Main*/
+$primaryColor: $blue;
+$secondaryColor: $red;
+
+@mixin linear-gradient($args...) {
+  background-image: -o-linear-gradient($args);
+  background-image: -moz-linear-gradient($args);
+  background-image: -webkit-linear-gradient($args);
+  background-image: linear-gradient($args);
+}
+
+//gradientBar
+@mixin gradientBar() {
+  @include linear-gradient(
+    90deg,
+    rgba(204, 0, 61, 1) 0%,
+    rgba(233, 56, 53, 1) 14%,
+    rgba(233, 56, 53, 1) 50%,
+    rgba(233, 56, 53, 1) 88%,
+    rgba(204, 0, 61, 1) 100%
+  );
+}
+$breakpoints: (
+  mobile-xs: 321px,
+  mobile-sm: 451px,
+  mobile: 769px,
+  ipad: 768px,
+  tablet: 1024px,
+  laptop: 1240px,
+  desktop-lg: 1800px,
+  desktop-4k:2560px
+);
+
+@mixin breakpoint($breakpoint, $direction) {
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @if $direction == max {
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint-value) {
+        @content
+      }
+    }
+
+  } @else {
+    @if $direction == max {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint) {
+        @content
+      }
+    }
+  }
+}

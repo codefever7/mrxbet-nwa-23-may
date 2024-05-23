@@ -1,0 +1,49 @@
+@import "../core/var";
+
+section.contact-us {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        h2 {
+            padding: 5px;
+            font-weight: bold;
+        }
+    }
+
+    .box {
+        border: 1px solid $gray3;
+        padding: 15px;
+        margin: 10px;
+
+        .form-control {
+            background-color: transparent;
+            border: 1px solid $green;
+            border-radius: 10px;
+            color: var(--color-fg);
+        }
+
+        .box-icon-title {
+            background: $green;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+
+            .icon-title {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        img {
+            min-width: 100%;
+            // min-height: 250px;
+        }
+    }
+}

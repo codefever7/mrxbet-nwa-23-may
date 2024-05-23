@@ -1,0 +1,280 @@
+@import "../core/var";
+
+$backgroundNewsletterColor: $gray;
+$backgroundSocialColor: $black;
+$backgroundEndlColor: $grayDark;
+$borderColor: $grayLight;
+$textColor: $grayLight;
+
+.footer {
+  
+  padding: 48px 20px 0;
+  background: var(--color-bg-footer);
+  margin-top: 30px;
+  h4 {
+    font-size: 18px;
+  }
+  .newsletter-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $backgroundNewsletterColor;
+    p {
+      font-size: 12px;
+    }
+    .header-newsletter {
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      align-items: center;
+      justify-content: center;
+      .header-img {
+        width: auto;
+        height: 30px;
+        max-width: 100%;
+        align-self: center;
+      }
+      h4 {
+        margin: 4px 0 0 15px;
+      }
+    }
+    .form {
+      input {
+        border: 2px solid $white;
+        border-radius: 0;
+        background-clip: unset;
+        background: $white;
+        color: $black;
+        height: 42px;
+      }
+      .input-group-prepend {
+        position: absolute;
+        top: 0;
+        right: 3.5px;
+        bottom: 0;
+        align-items: center;
+        z-index: 3;
+        .submit {
+          color: $white;
+          background-color: $green;
+          border-color: $green;
+        }
+      }
+    }
+  }
+  .social {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: $backgroundSocialColor;
+    border-bottom: 2px solid $grayLight;
+    img {
+      height: 40px;
+      max-width: 100%;
+    }
+    @include breakpoint(laptop, min) {
+      .box-icon{
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+      }
+      .box-menu{
+        flex: 0 0 63.33333%;
+        max-width: 63.33333%;
+      }
+    }
+    @include breakpoint(desktop-lg, min) {
+      .box-icon{
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+      .box-menu{
+        flex: 0 0 73.33333%;
+        max-width: 73.33333%;
+      }
+    }
+
+  }
+  .footer-end {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--color-border-top-footer);;
+
+    .footer-text {
+      color: $textColor;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .footer-content {
+      display: flex;
+      border-bottom: 1px solid $borderColor;
+      .item-img {
+        align-self: center;
+        width: 150px;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .item-text {
+        padding-left: 20px;
+        p {
+          margin: 0;
+        }
+      }
+    }
+    .footer-content-end {
+      display: flex;
+      .item-img {
+        align-self: center;
+        width: 100px;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      .item-text {
+        text-align: center;
+        line-height: 18px;
+        font-size: 12px;
+        p {
+          margin: 0;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .list-item-1 {
+      display: flex;
+      //   flex-flow: row wrap;
+      padding: 0;
+      @include breakpoint(mobile, max) {
+        flex-flow: row wrap;
+      }
+
+      li {
+        float: left;
+        display: block;
+        position: relative;
+        // width: 10%;
+        padding: 5px;
+        @include breakpoint(mobile, max) {
+          width: auto;
+        }
+        img {
+          max-width: 100%;
+          @include breakpoint(mobile, max) {
+            height: 25px;
+          }
+        }
+      }
+    }
+    .flex {
+      display: flex;
+      // border-bottom: 1px solid $borderColor;
+      // border-top: 1px solid $borderColor;
+      padding-top: 1rem;
+    }
+    .list-item-2 {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 0;
+      justify-content: center;
+      @include breakpoint(mobile, max) {
+        flex-flow: row wrap;
+      }
+
+      li {
+        float: left;
+        display: flex;
+        position: relative;
+        padding: 4px 8px;    
+        width: 120px;
+        height: 70px;
+        background: var(--color-bg-payment);
+        margin: 6px;
+        border-radius: 7px;
+        justify-content: center;
+        align-items: center;
+        img {
+          max-width: 96px;
+        }
+      }
+    }
+  }
+  .jb-icon {
+    &.newsletter {
+      color: $red;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    &.casino-arrow-right {
+      color: $white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .footer-column {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--color-border-top-footer);
+
+    .Informations,
+    .CasinosMenu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 14px 0;
+
+      a {
+        color: var(--color-fg);
+        padding: 4px 8px;
+        
+        span { 
+          font-size: 15px; //12px;
+        }
+      }
+    }
+    // .footer-content {
+    //   @include breakpoint(mobile, max) {
+    //     text-align: center;
+    //   }
+    // }
+    // .footer-text {
+    //   padding-top: 15px;
+    //   color: $white;
+    // }
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    
+    margin: auto;
+    width: auto;
+
+    @media (min-width:768px) {
+      flex-wrap: nowrap;
+    }
+    @media (min-width:1240px) {
+      width: 60vw;      
+    }
+
+    .Icon18Plus {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+    }
+
+    .CopyrightText {
+      font-size: 16px;
+      padding: 10px;
+
+      div p {
+        font-size: 14px;
+        @media (min-width:768px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+@import "../core/var";
+
+section.faq-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .jb-icon.faq {
+        color: $red;
+        font-size: 26px;
+        padding-right: 10px;
+    }
+    .jb-icon.casino-arrow-right {
+        color: var(--color-fg);
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 10px;
+        display: none;
+    }
+    .jumbotron {
+        padding: 15px 20px;
+        background: var(--color-bg-accountpage);
+        color: var(--color-fg);
+        h2 {
+            padding-bottom: 10px;
+        }
+        a {
+            color: $grayLight;
+        }
+        a:hover {
+            color: $blue;
+        }
+    }
+    .list-faq {
+        margin-top: 20px;
+        a {
+            color: $grayDarker;
+        }
+        a:hover,  a:active {
+            font-weight: 300;
+            color: $black;
+            .jb-icon {
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .nav-categories {
+        margin-top: 20px;
+        .nav-link {
+            padding: 15px 0;
+        }
+        h2 {
+            padding: 0.5rem 0;
+            margin-bottom: 0;
+            font-weight: bold;
+            color: var(--color-fg);
+        }
+        a {
+            color: var(--color-fg);
+            position: relative;
+        }
+        a.active {
+            color: var(--color-fg);
+            font-weight: 500;
+
+            &:after {    
+                content: '';
+                width: 50px;
+                display: block;
+                height: 4px;
+                background: green;
+                border-radius: 4px;
+                position: absolute;
+                bottom: 4px;
+            }
+        }
+    }
+    .faq-png {
+        max-height: 26px;
+        margin: 0 10px 3px 0;
+    }
+    .form-control {
+        border-radius: 0;
+        background-clip: unset;
+        color: $grayDarker;
+        background: $white;
+
+        ::-webkit-input-placeholder { 
+            color: $grayDarker;
+        }
+        :-ms-input-placeholder { 
+            color: $grayDarker;
+        }
+        ::placeholder {
+            color: $black;
+        }
+    }
+    .text-search {
+        border-radius: 0;
+    }
+
+    .btn-search {
+        padding: 3px;
+        background-color: $yellow;
+        border: 1px solid $white;
+        .jb-icon {
+            padding: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            color: $black;
+        }
+    }
+
+    .btn-search:active {
+        background-color: $yellow;
+        border: 1px solid $white;
+    }
+    .sort-by {
+        select {
+            padding: 5px 10px;
+            border: 1px solid $red;
+            border-radius: 0;
+            background: transparent;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            -webkit-padding-end: 30px;
+            cursor: pointer;
+        }
+        select + i.jb-icon {
+            float: right;
+            margin-top: -26px;
+            margin-right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: $red;
+            pointer-events: none;
+            background: transparent;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+    }
+    .custom-select {
+        font-size: 14px;
+    }
+    .input-group {
+        border: 1px solid $gray;
+    }
+    
+    @include breakpoint(tablet, max) {
+        .sort-by {
+            text-align: left;
+        }
+    }
+}

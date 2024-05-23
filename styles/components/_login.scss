@@ -1,0 +1,115 @@
+@import "../core/var";
+
+.login {
+  .modal-content {
+    border-radius: 0;
+    border: 0;
+    .modal-body {
+      padding: 0;
+      padding-top: 10px
+    }
+    h1 {
+      font-size: 2.375em;
+    }
+  }
+  .close{
+    i{
+      color: $black;
+    }
+  }
+  form {
+    .form-control {
+      border-radius: 0;
+      background-color: $white;
+      border: 1px solid $gray;
+      background-clip: unset;
+      color: $black;
+    }
+    a > p {
+      color: $yellow;
+    }
+    .btn-login {
+      width: 100%;
+      border: 1px solid $green;
+      border-radius: 0;
+      display: flex;
+      justify-content: center;
+      background-color: $green;
+    }
+    .btn-login:not(:disabled):not(.disabled):active {
+      background-color: $green;
+      border: 1px solid $green;
+    }
+    .btn-login:focus,
+    .btn-login:not(:disabled):not(.disabled):active:focus {
+      box-shadow: 0 0 0 0.2rem $greenLight
+    }
+    input[type="checkbox"]::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      top: 2px;
+      left: 0;
+      position: absolute;
+    }
+    input[type="checkbox"]::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/images/RegisterPage_CheckBox-2.png");
+      position: absolute;
+      top: 2px;
+      left: 0;
+      z-index: 100;
+      background-size: 20px;
+      background-repeat: no-repeat;
+    }
+    input[type="checkbox"]:checked::after {
+      background-image: url("/static/images/RegisterPage_CheckBox-1.png");
+    }
+  }
+  .btn-register {
+    width: 100%;
+    border: 2px solid $red;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    background-color: $red;
+    color: $white;
+  }
+  .btn-register:not(:disabled):not(.disabled):active {
+    background-color: $red;
+    border: 2px solid $red;
+    color: $white;
+  }
+  .btn-register:focus,
+  .btn-register:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgba(126, 24, 24, 0.5);
+  }
+  .line{
+    z-index: 0;
+  }
+  .line > p::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+  }
+  .line > p::after {
+    content: "";
+    width: 50px;
+    height: 30px;
+    background-color: $bg;
+    position: absolute;
+    left: 44%;
+    top: 0;
+    z-index: -1;
+  }
+}

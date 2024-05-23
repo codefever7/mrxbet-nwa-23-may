@@ -1,0 +1,129 @@
+@import "../core/var";
+
+$textTitleColor: $black;
+$linkColor: $grayDarker;
+$buttonColor: $white;
+$buttonTextColor: $black;
+$buttonBorderColor: $red;
+section.become {
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  .main-become {
+    .header-become {
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-bottom: 20px;
+      h1 {
+        margin: 0;
+      }
+      .header-img {
+        width: auto;
+        height: 30px;
+        max-width: 100%;
+        align-self: center;
+      }
+    }
+
+    .content {
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      margin-left: 0;
+      margin-right: 0;
+      @include breakpoint(mobile, max) {
+        height: 100%;
+      }
+      // .become-1::before{
+      //     content: "";
+      //     width: 100%;
+      //     height: 100%;
+      //     left: 0;
+      //     right: 0;
+      //     float: none;
+      //     background: rgba(241, 196, 15, 0.5);
+      //     top: 0;
+      //     position: absolute;
+      // }
+      // .become-2::before{
+      //     content: "";
+      //     width: 100%;
+      //     height: 100%;
+      //     left: 0;
+      //     right: 0;
+      //     float: none;
+      //     background: rgba(41, 128, 185, 0.5);
+      //     top: 0;
+      //     position: absolute;
+      // }
+      // .become-3::before{
+      //     content: "";
+      //     width: 100%;
+      //     height: 100%;
+      //     left: 0;
+      //     right: 0;
+      //     float: none;
+      //     background: rgba(28, 40, 51, 0.5);
+      //     top: 0;
+      //     position: absolute;
+      // }
+      img {
+        object-fit: cover;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        width: 100%;
+      }
+      .content-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        @include breakpoint(mobile, max) {
+          padding: 20px 0 20px 0;
+        }
+        .content-text {
+          text-align: center;
+          color: #fff;
+          span {
+            font-size: 30px;
+            position: relative;
+          }
+          span::before {
+            content: "";
+            border: 2px solid #fff;
+            border-radius: 50px;
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 0;
+            left: -15px;
+          }
+        }
+      }
+    }
+    .button-end {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      .button-layout {
+        margin-top: 30px;
+      }
+      .button {
+        padding: 5px 25px;
+        border: 2px solid $buttonBorderColor;
+        background-color: $buttonColor;
+        color: $buttonTextColor;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .button-link {
+        color: $linkColor;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

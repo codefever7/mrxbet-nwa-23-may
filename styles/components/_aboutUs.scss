@@ -1,0 +1,96 @@
+@import "../core/var";
+
+section.about-us {
+    .about-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .nav {
+        .icon {
+            width: 50px;
+            padding: 5px 10px;
+            background: $black;
+            margin-right: 10px;
+        }
+        a {
+            background: $grayDark;
+            color: $white;
+            border-bottom: 1px solid $grayLight;
+            line-height: 1;
+        }
+        a:hover {
+            color: $white;
+            background: $redDark;
+        }
+        a.active {
+            background: $redDark;
+        }
+    }
+    .jumbotron {
+        padding: 10px;
+        background: $grayWhiteSmoke;
+        h2 {
+            padding-bottom: 10px;
+        }
+    }
+    .accordion {
+        .card {
+            border-radius: 0;
+        }
+        .active.card-header {
+            color: $white;
+            background: $redDark;
+        }
+        .card-header {
+            color: $white;
+            background: $grayDark;
+            border-radius: 0;
+            border-bottom: 0;
+            padding: 0;
+            .row {
+                margin-right: 0;
+                margin-left: 0;
+                cursor: pointer;
+                .icon {
+                    background: $black;
+                    padding: 5px;
+                }
+                .title {
+                    display: -webkit-box;
+                    -webkit-align-self: center;
+                    line-height: 1;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    max-height: 45px;
+                }
+            }
+            .row:hover {
+            background: $redDark;
+            }
+        }
+        .card-header.collapse.show {
+            color: $white;
+            background: $redDark;
+        }
+        .card-body {
+            background: $grayWhiteSmoke;
+        }
+    }
+    .jb-icon {
+        font-size: 26px;
+        line-height: 26px;
+        margin: 5px 0;
+    }
+    
+    @include breakpoint(mobile, max) {
+        .jumbotron {
+            display: none;
+        }
+    }
+    @include breakpoint(mobile, min) {
+        .card-body {
+            display: none;
+        }
+    }
+}

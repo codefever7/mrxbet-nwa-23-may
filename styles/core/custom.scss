@@ -1,0 +1,2317 @@
+@import "../core/var";
+
+.carousel {
+    .carousel__wrapper {
+        position: relative;
+
+        .Header {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0px; //12px 0px;
+            align-items: center;
+
+            .Title,
+            .Title span {
+                font-size: 20px; //20px;
+                width: 70%;
+                text-transform: uppercase;
+                font-family: Poppins-Medium;
+                white-space: break-spaces;
+                color: var(--color-fg-menu);
+
+                @media (min-width:564px) {
+                    font-size: 26px; //26px;
+                }
+
+                &:nth-child(2) {
+                    color: $green;
+                }
+            }
+
+            .RightSide {
+                display: flex;
+                align-items: center;
+
+                .carousel__controls {
+                    width: auto;
+                    margin: 10px 0 10px 10px;
+                    //Hide < > on mobile
+                    @include breakpoint(mobile, max) {
+                        display: none;
+                    }
+                }
+            }
+
+            .btn {
+                //height: 30px;
+                border-radius: 4px;
+                color: $white;
+                font-family: Montserrat-Regular;
+                font-size: 18px; //14px;
+                padding: 0 14px;
+                border: 0;
+            }
+
+            .carousel__controls {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin: 10px 0;
+                position: relative;
+                width: 50%;
+
+                .Arrows {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    padding: 2px 0;
+
+                    .arrow-prev,
+                    .arrow-next {
+                        background: darkgreen;
+                        display: flex;
+                        align-items: center;
+                        padding: 1px 2px;
+                        border-radius: 6px;
+                        height: 38px; //30px;
+                        margin: 0 4px;
+
+                        svg {
+                            width: 20px;
+                            //height: 14px;
+                            margin-top: 6px;
+                            fill: $white; // At game slide < >
+                        }
+                    }
+                }
+
+                .carousel-dot {
+                    display: block;
+                    position: relative;
+                    width: auto;
+                    height: 8px;
+                    padding: 0 4px;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    // &:hover input~.checkmark {
+                    //     background-color: #ccc;
+                    // }
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    &:hover input~.checkmark,
+                    input:checked~.checkmark {
+                        background: linear-gradient(to right, $greenLogin , $greenSky);
+                        width: 28px;
+                        margin-left: 0px;
+                    }
+
+                    input:checked~.checkmark:after {
+                        display: block;
+                    }
+
+                    .checkmark {
+                        display: block;
+                        left: 0;
+                        height: 8px;
+                        width: 8px;
+                        border-radius: 8px;
+                        background: $greenDotSlide;
+                    }
+                }
+            }
+        }
+
+        .carousel__content {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            display: grid;
+            -webkit-overflow-scrolling: touch;
+            cursor: grab;
+            padding: 0;
+            padding-top: 4px; //2px;
+            margin: 0;
+            grid-auto-flow: column;
+            grid-auto-columns: max-content;
+            list-style: none;
+            //grid-template-columns: repeat(3, minmax(100%, 1fr));
+            grid-template-columns: repeat(2, minmax(50%, 1fr));
+            &.singer {
+                cursor: default;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &.sports {
+        padding: 0 15px;
+
+        .games-list-item {
+            height: 80%;
+        }
+    }
+}
+
+.menubar {
+    background-color: var(--color-menuheader);
+
+    .nav-logo {
+        display: flex;
+
+        .Hamburger {
+            display: block;
+
+            @media (min-width:1217px) {
+                display: none;
+            }
+
+            img {
+                width: 40px; //36px;
+                height: auto;
+                //margin: 0 10px;
+            }
+        }
+    }
+
+    .headerMenu {
+        display: none;
+
+        @media (min-width:1217px) {
+            display: block;
+        }
+
+        .main-menu {
+            background-color: transparent;
+            font-size: 18px; //14px;
+            flex-wrap: wrap;
+
+            .menuItem {
+                //padding: 5px;
+                font-family: Poppins-Medium;
+
+                a {
+                    color: var(--color-fg);
+
+                    &.actived {
+                        color: var(--color-fg);
+                    }
+
+                    .jb-icon {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Balance {
+        display: flex;
+        align-items: center;
+
+        .IconAvatar {
+            width: 43px; //30px;
+            height: 27px; //30px;
+            margin-right: 4px; //8px;
+            display: none;
+
+            @media (min-width: 768px) {
+                display: block;
+            }
+        }
+
+        .Amount {
+            font-size: 24px; //10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            //padding: 0 5px;
+            position: relative;
+            white-space: nowrap;
+            color: var(--color-fg-menu);
+
+            @media (min-width: 1150px) {
+                padding: 0 15px;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                border-left: 2px solid var(--color-border-balance);
+                height: 15px;
+                top: 6px;
+                display: none;
+
+                @media (min-width: 1025px) {
+                    display: block;
+                }
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                border-left: 2px solid var(--color-border-balance);
+                height: 15px;
+                top: 6px;
+
+                display: none;
+
+                @media (min-width: 1025px) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .nav-right {
+        flex-wrap: nowrap;
+        display: flex;
+
+        .item-nav.langContainer {
+            display: none;
+
+            @media (min-width:1217px) {
+                display: block;
+            }
+
+            .menus-languages {
+                .dropdown {
+                    #dropdown-custom-1.languageActiveButton {
+                        padding: 9px 31px 8px 12px;
+                        background-color: var(--color-bg-langguage);
+                        font-family: Poppins-Medium;
+                        color: var(--color-fg-langguage);
+                        height: 37px;
+                        &:after {
+                            content: "\276F";
+                            position: absolute;
+                            top: 13px;
+                            right: 10px;
+                            transform: rotate(90deg);
+                            border: 0;
+                            color: var(--color-fg-langguage);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footerMenu {
+    display: block;
+    height: 60px;
+
+    @media (min-width:1100px) {
+        display: none;
+    }
+}
+
+.login.loginModal {
+    .modal-content {
+        background-color: var(--color-bg);
+        border-radius: 20px;
+        padding: 10px 0;
+
+        .logo {
+            margin-bottom: 0px;
+        }
+
+        form {
+            .form-control {
+                background-color: var(--color-txtbox-bg);//transparent;
+                //border: 1px solid $greenLogin;
+                border: none;
+                border-radius: 5px; //10px;
+                color: var(--color-txtbox-fg);
+                height: 51px;
+                margin-top: 15px;
+            }
+        }
+
+        .line {
+            border: 1px solid #313d51ba;
+        }
+
+        .close-icon {
+            i.jb-icon {
+                color: var(--color-txtbox-fg);
+                border: solid;
+                border-width: 1px;
+                padding: 8px;
+                border-color: #32A624; //#19361A;
+                border-radius: 5px;
+            }
+        }
+
+        a {
+            color: $green;
+            text-decoration: underline;
+
+        }
+
+        .terms {
+            font-size: 12px;
+        }
+    }
+}
+
+.navbar-headerbar {
+    .menubar {
+        .container-custom {
+            max-width: 100%;
+            height: 80px; //Make same height footer on mobile
+            @media screen and (max-width: 768px) {
+                padding-top: 6px; //Make center on mobile
+            }
+        }
+    }
+}
+
+section.casino-games {
+
+    .container-custom,
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .games {
+        .BackButton {
+            //height: 30px;
+            border-radius: 4px;
+            color: $white;
+            font-family: Montserrat-Regular;
+            font-size: 18px; //14px;
+            padding: 0 14px;
+            border: 0;
+        }
+
+        .games-list {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(5, 1fr);
+
+            &.containerSlide {
+                &:not(.casinoSlide) {
+                    grid-template-columns: repeat(1, 1fr); 
+                }
+
+                &.exceptGroup {
+                    display: block !important;
+
+                    .carousel__content {
+                        overflow-y: hidden;
+                        overflow-x: scroll;
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                        display: grid;
+                        cursor: grab;
+                        padding: 0;
+                        margin: 0;
+                        grid-gap: 13px;
+                        grid-auto-flow: column;
+                        grid-auto-columns: max-content;
+                        list-style: none;
+                    }
+                }
+
+                &.casinoSlide {
+                    display: flex;
+                    padding: 0;
+                    margin: 16px 0px;
+
+                    .carousel__content {
+                        .games-list-item {
+                            width: 180px;
+                            margin: 0 5px;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+
+                        .GroupCasinoGames {
+                            .games-list-item {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .GroupCasinoGames {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+                grid-gap: 10px;
+                padding: 0 5px;
+
+                &.games-container-row-2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+
+                    .games-list-item.VerticalImage {
+                        // min-height: 225px;
+                        min-height: 15vw;
+
+                        @media (max-width: 1024px) {
+                            // min-height: 200px;
+                            min-height: 20.5vw;
+                        }
+
+                        @media (max-width: 767px) {
+                            min-height: 300px;
+                        }
+
+                        @media (max-width: 668px) {
+                            min-height: 250px;
+                        }
+
+                        @media (max-width: 568px) {
+                            min-height: 210px;
+                        }
+
+                    }
+
+                    .games-container-home-1 {
+                        gap: 13px; //5px;
+                        display: grid;
+
+                        grid-auto-rows: 1fr;
+                        width: 100%;
+
+                        @media (min-width: 1024px) {
+                            grid-template-columns: repeat(7, 1fr);
+                        }
+
+                        @media (max-width: 1023px) {
+                            grid-template-columns: repeat(5, 1fr);
+                        }
+
+                        @media (max-width: 767px) {
+                            grid-template-columns: repeat(2, 1fr); //repeat(3, 1fr); Show 4 games for iPhone14Pro Max
+                        }
+
+                        &.vertical-1-row {
+                            .VerticalImage {
+                                min-height: 300px;
+
+                                @media (max-width: 768px) {
+                                    min-height: 15vw;
+                                }
+                            }
+                        }
+                    }
+
+                    .games-container-home-2 {
+                        gap: 15px; //5px;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-auto-rows: 1fr;
+                        width: 100%;
+
+                        @media (min-width: 1024px) {
+                            grid-template-columns: repeat(6, 1fr);
+                        }
+
+                        @media (max-width: 768px) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &:not(.sports):not(.liveCasino-hardcodeGame):not(.CasinoPage) {
+                    grid-template-rows: 1fr 1fr;
+                }
+
+                @media (min-width:564px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media (min-width:768px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                @media (min-width:1000px) {
+                    grid-template-columns: repeat(6, 1fr);
+                }
+
+                &.sports {
+                    grid-template-columns: repeat(2, 1fr);
+
+                    @media (min-width:564px) {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    @media (min-width:768px) {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    .games-list-item {
+                        max-height: 80%;
+                    }
+                }
+
+                &.liveCasino-hardcodeGame {
+                    grid-template-columns: repeat(2, 1fr);
+
+                    @media (min-width:564px) {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+
+                    padding: 0 10px 0 0;
+
+                    &:first-child {
+                        padding-left: 10px;
+                    }
+
+                    .games-list-item {
+                        margin: 0;
+
+                        .game-item {
+                            padding: 20px 0;
+
+                            .text-row-block-opentime,
+                            .text-row-block-currency,
+                            .live {
+                                display: none;
+                            }
+
+                            .game-popup {
+                                .popup-content {
+                                    background: transparent;
+
+                                    .buttonPlayGame a.real-mobile svg {
+                                        width: 70px;
+                                        height: 70px;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                a.game-thumb .game-img {
+                                    filter: brightness(0.3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .games-list-item {
+                width: 100%;
+                margin: 0;
+                position: relative;
+
+                &:not(.VerticalImage) {
+                    // max-height: 192px;
+                }
+
+                .game-item {
+                    height: 100%;
+
+                    .tagContent {
+                        display: flex;
+                        flex-direction: column;
+
+                        .tagNew,
+                        .tagHot {
+                            margin-bottom: 4px;
+                            border-radius: 0 20px 0;
+                            min-width: 55px;
+                            padding: 0 4px;
+                            width: auto;
+                            height: 34px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 12px;
+                            color: $white;
+                        }
+
+                        .tagNew {
+                            background: linear-gradient(0.9turn, #0BBEFF, #4940c4);
+                        }
+
+                        .tagHot {
+                            background: linear-gradient(0.9turn, #f88569, #d42b2b);
+                        }
+                    }
+
+                    .game-title {
+                        //display: none;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        text-align: center;
+                        background: transparent;
+                        border-radius: 0 0 20px 20px;
+                        height: 40%;
+                        font-size: 13px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        padding: 0 8px;
+                        color: $white;
+
+                        &.blue {
+                            //background: linear-gradient(to top, #4940c4, #4940c4cf, #4940c400);
+                        }
+
+                        &.red {
+                            //background: linear-gradient(to top, #ff3d3d, #ff3d3dcf, #ff3d3d00);
+                        }
+
+                        &.green {
+                            //background: linear-gradient(to top, #34d364, #34d364cf, #34d36400);
+                        }
+
+                        .gameName {
+                            font-size: 16px;
+                            font-weight: 600;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            display: none;
+                        }
+
+                        .gameVendor {
+                            font-size: 10px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            display: none;
+                        }
+                    }
+
+                    .game-popup {
+                        .buttonPlayGame {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            text-align: center;
+
+                            a {
+                                color: $white;
+                            }
+
+                            a.real-mobile {
+                                svg {
+                                    width: 45px;
+                                    height: 45px;
+
+                                    @media (min-width:768px) {
+                                        width: 40px;
+                                        height: 40px;
+                                    }
+
+                                    @media (min-width:1300px) {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+
+                                    @media (min-width:1500px) {
+                                        width: 60px;
+                                        height: 60px;
+                                    }
+                                }
+                            }
+
+                            a.fun-mobile {
+                                margin-bottom: 26px;
+                            }
+                        }
+                    }
+                }
+
+                &.VerticalImage {
+                    grid-column: span 1;
+                    grid-row: span 2;
+
+                    .game-item {
+                        a.game-thumb .game-img {
+                            object-fit: cover;
+                        }
+
+                        .buttonPlayGame {
+                            a.real-mobile {
+                                svg {
+                                    width: 60px;
+                                    height: 60px;
+
+                                    @media (min-width:1300px) {
+                                        width: 70px;
+                                        height: 70px;
+                                    }
+
+                                    @media (min-width:1500px) {
+                                        width: 80px;
+                                        height: 80px;
+                                    }
+                                }
+                            }
+
+                            a.fun-mobile {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .game-title {
+                        display: flex;
+
+                        .gameName,
+                        .gameVendor {
+                            display: none;
+                        }
+                    }
+
+                    .game-popup {
+                        .game-title {
+                            display: flex;
+                            z-index: 11;
+                            background: transparent;
+                            height: auto;
+
+                            .gameName,
+                            .gameVendor {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel {
+        &.liveCasino-hardcodeGame {
+            .carousel__content {
+                background: linear-gradient(90deg, #0e1d10, #2b372d 50%, #0e1d10);
+                border-radius: 10px;
+
+                @media (min-width: 768px) {
+                    background: var(--color-bg-home-livecasino);
+                }
+
+                .GroupCasinoGames .games-list-item {
+                    .game-item {
+                        .game-title {
+                            display: none;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        &.TopSlotGames {
+            .carousel__content {
+                .GroupCasinoGames {
+                    .games-list-item {
+                        .game-item {
+                            .game-title {
+                                display: none;
+                            }
+
+                            .game-popup {
+                                .buttonPlayGame a.fun-mobile {
+                                    margin-bottom: 0;
+                                }
+                                .buttonPlayGame a.real-mobile svg{
+                                    width: 65px;
+                                    height: 65px;
+                                }
+                                // .game-title {
+                                //     display: flex;
+                                // }
+                            }
+                        }
+
+                        // &:hover {
+                        //     .game-item {
+                        //         .game-title {
+                        //             display: flex;
+                        //             .gameName, .gameVendor {
+                        //                 display: none;
+                        //             }
+                        //         }
+                        //         .game-popup {
+                        //             .game-title {
+                        //                 .gameName, .gameVendor {
+                        //                     display: block;
+                        //                 }
+                        //             }
+                        //         }
+                        //     }
+                        // }
+                    }
+                }
+            }
+        }
+
+        .carousel__wrapper {
+            position: relative;
+
+            .carousel__controls {
+                display: flex;
+                justify-content: flex-end;
+                margin: 10px 0;
+                position: relative;
+
+                .carousel-dot {
+                    display: block;
+                    position: relative;
+                    width: auto;
+                    height: 8px;
+                    padding: 0 4px;
+                    margin-bottom: 0;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    // &:hover input~.checkmark {
+                    //     background-color: #ccc;
+                    // }
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+
+                    &:hover input~.checkmark,
+                    input:checked~.checkmark {
+                        background: linear-gradient(to right, $greenLogin , $greenSky);
+                        width: 28px;
+                        margin-left: 0px;
+                    }
+
+                    input:checked~.checkmark:after {
+                        display: block;
+                    }
+
+
+                    .checkmark {
+                        display: block;
+                        left: 0;
+                        height: 8px;
+                        width: 8px;
+                        border-radius: 8px;
+                        background: $greenDotSlide;
+                    }
+
+                }
+
+            }
+
+        }
+
+
+        .carousel__content {
+            grid-template-columns: repeat(4, minmax(100%, 1fr));
+        }
+
+        .carousel__item {
+            margin: 0;
+            display: grid;
+            justify-content: center;
+            margin-bottom: 0px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(.3);
+            animation: scaleAnimation 1s ease-in-out forwards;
+
+
+            img {
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+                user-drag: none;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+section.sliders {
+    .sliders-container {
+        height: 300px; //204px;
+        width: 100%;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            height: 342px;
+        }
+        @media (min-width: 1092px) {
+            height: 368px;
+        }
+        div,
+        div.carousel-root {
+            width: 100%;
+
+            .carousel {
+                overflow: visible;
+
+                .control-dots {
+                    padding-right: 28px;
+                    margin-bottom: 3px;
+                    li {
+                        height: 8px;
+                        width: 8px;
+                        border-radius: 8px;
+                        background: #8EA993;
+                        margin: 0 4px;
+                        border: 0;
+
+                        &.selected {
+                            background: linear-gradient(to right, #32A624, #00FFAA);
+                            width: 28px;
+                        }
+                    }
+                }
+
+                .slider-wrapper {
+                    height: 300px; //204px;
+
+                    @media (min-width: 768px) {
+                        height: 342px;
+                    }
+                    @media (min-width: 1092px) {
+                        height: 368px;
+                    }
+                }
+
+                .slide {
+                    background: transparent;
+                    padding: 0 10px; //14px; //fix banner footer image cut
+                    // height: 228px;
+                    align-self: center;
+                    height: 300px; //204px;
+
+                    @media (min-width: 768px) {
+                        height: 342px;
+                        padding: 0 20px;
+                    }
+
+                    &:not(.selected) {
+                        @media (min-width: 1600px) {
+                            // height: 228px;
+                        }
+                    }
+
+                    &.selected {
+                        height: 300px; //204px;
+
+                        @media (min-width: 768px) {
+                            height: 342px;
+                        }
+                    }
+
+                    .sliderItems {
+                        position: relative;
+                        height: 100%;
+
+                        &.HasClick {
+                            cursor: pointer;
+                        }
+
+                        .carousel-caption {
+                            padding: 0 20px;
+                            background-image: none;
+                            border-radius: 20px;
+
+                            .sliders-layout-text {
+                                // align-self: flex-end;
+                                align-self: center;
+                                margin-bottom: 25px;
+                                width: 90%;
+
+                                @media (min-width: 520px) {
+                                    width: 55%;
+                                }
+
+                                .content-text {
+                                    padding-left: 15px;
+
+                                    @media (min-width: 768px) {
+                                        padding-left: 40px;
+                                    }
+
+
+                                    h1 {
+                                        font-family: Montserrat-ExtraBold;
+                                        margin-bottom: 0;
+                                        line-height: 0.9;
+                                        font-size: 25px;
+
+                                        @media (min-width: 568px) {
+                                            font-size: 24px;
+                                        }
+
+                                        @media (min-width: 768px) {
+                                            font-size: 40px;
+                                        }
+
+                                        @media (min-width: 1200px) {
+                                            font-size: 55px;
+                                        }
+                                    }
+
+                                    .description {
+                                        font-family: Montserrat-Medium;
+                                        min-height: auto;
+                                        // display: none;
+
+                                        // @media (min-width: 768px) {
+                                        //     display: block;
+                                        // }
+
+                                        p,
+                                        p p,
+                                        span {
+                                            font-family: Montserrat-Medium;
+                                            font-size: 15px; //12px;
+
+                                            @media (min-width: 768px) {
+                                                font-size: 16px;
+                                            }
+
+                                            @media (min-width: 1200px) {
+                                                font-size: 18px;
+                                            }
+                                        }
+                                    }
+                                    .group-content{
+                                        @media (min-width: 1092px)  {
+                                            height: 258px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .sliderStyle_1 {
+                                .content-text {
+
+                                    h1,
+                                    p {
+                                        // border: 1px solid $black;
+                                        text-shadow: 0.05em 0.05em 0.01em #000;
+                                        -moz-text-shadow: 0.05em 0.05em 0.01em #000;
+                                        -webkit-text-shadow: 0.05em 0.05em 0.01em #000;
+                                    }
+                                }
+
+                                .buttonSlider {
+                                    position: absolute;
+                                    bottom: 10px;
+                                    min-width: 140px;
+                                    width: auto;
+
+                                    @media (min-width: 768px) {
+                                        position: relative;
+                                        bottom: unset;
+                                    }
+
+                                    button {
+                                        padding: 6px 12px;
+                                        color: $white;
+
+                                        @media (min-width: 768px) {
+                                            padding: 8px 18px;
+                                        }
+
+                                        @media (min-width: 1100px) {
+                                            padding: 10px 25px;
+                                        }
+                                        // @media screen and (max-width: 768px) {
+                                            height: 37px;
+                                            font-size: 14px;
+                                            
+                                        // }
+                                    }
+                                }
+                            }
+                        }
+
+                        img {
+                            object-fit: cover;
+                            border-radius: 20px;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+section.ProviderSlide {
+    padding: 0 16px;
+    margin: auto;
+
+    .GroupVendor {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        grid-gap: 10px;
+        padding: 0 5px;
+
+        @media (min-width:768px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (min-width:1100px) {
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        .VendorItem {
+            background: var(--color-bg-category);
+            width: 100%;
+            height: 67px;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding: 10px;
+
+            &:hover {
+                background: linear-gradient(to right, #32A624, #00FFAA);
+            }
+
+            span {
+                font-size: 18px;
+            }
+
+            img {
+                max-height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+section.category-games {
+    .category-list {
+        background: transparent;
+
+        .SearchAndVendors {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            //margin: 0 0 10px;
+            @media (min-width: 768px) {
+                padding-top: 4px;
+                margin: 0 0 5px;
+            }
+
+            .searchInput,
+            .VendorInput {
+                width: 100%;
+                border-radius: 7px;
+                border: 0;
+                border: 1px solid $green;
+                background: transparent;
+                color: var(--color-fg);
+                height: 51px;
+
+                &:focus-visible,
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .SearchBox,
+            .VendorBox {
+                position: relative;
+            }
+
+            .SearchBox {
+                flex: calc(100% - 170px);
+
+                @media (min-width: 768px) {
+                    flex: 1.5;
+                }
+
+                padding: 0;
+
+                .searchInput {
+                    border-radius: 7px 0 0 7px;
+                    border-right: 0;
+                    padding: 0 0 0 36px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        text-overflow: ellipsis;
+                        color: var(--color-txtbox-fg);
+                    }
+
+                    @media (min-width: 768px) {
+                        border-right: 1px solid $green;
+                        border-radius: 7px;
+                        padding: 0 36px;
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    padding: 0 10px 0 0;
+                }
+
+                i.search {
+                    position: absolute;
+                    left: 9px;
+                    width: 20px;
+                    top: 19px;
+
+                    &:before {
+                        content: '\E85F';
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: var(--color-fg)
+                    }
+                }
+            }
+
+            .VendorBox {
+                flex: 170px;
+
+                @media (min-width: 768px) {
+                    flex: 1;
+                }
+
+                .VendorInput {
+                    border-radius: 0 7px 7px 0;
+                    border-left: 0;
+                    padding: 0;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        color: transparent;
+                    }
+
+                    @media (min-width: 768px) {
+                        border-left: 1px solid $green;
+                        border-radius: 7px;
+                        padding: 0 36px;
+
+                        &::placeholder {
+                            color: $gray-600;
+                        }
+                    }
+                }
+
+                .VendorActivationName {
+                    position: absolute;
+                    right: 3px;//10px;
+                    //padding-left: 5px;//10px;
+                    top: 2px;
+                    display: flex;
+                    align-items: center;
+                    height: 45px;
+                    font-weight: bold;
+                    background: var(--color-bg);
+                    min-width: 170px;
+                    justify-content: flex-end;
+
+                    .provider-content {
+                        display: contents;
+                        cursor: pointer;
+                    }
+
+                    .close-icon {
+                        //padding: 6px;
+                        padding-bottom: 1px;
+                        padding-right: 5px;
+                        width: 17px;//25px;
+                        cursor: pointer;
+                    }
+
+                    .icon {
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                            margin: 8px 0 0 0px;
+                            fill: var(--color-fg);
+                            padding: 2px;
+                        }
+                    }
+
+                    .ArrowDown {
+                        width: 16px;
+                        height: 10px;
+                        margin: 0 2px 0 8px;
+                    }
+                }
+
+                i.search {
+                    display: none;
+                    position: absolute;
+                    left: 9px;
+                    width: 20px;
+                    top: 19px;
+
+                    @media (min-width: 768px) {
+                        display: block;
+                    }
+
+                    &:before {
+                        content: '\E85F';
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: var(--color-fg)
+                    }
+                }
+            }
+
+            .VendorLists {
+                flex: 0 0 100%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin: 10px 0 0;
+                justify-content: center;
+
+                @media (min-width: 768px) {
+                    justify-content: flex-start;
+                }
+
+                .vendorItems {
+                    width: 96px;
+                    height: 46px;
+                    background: var(--color-bg-category);
+                    color: $white;
+                    border-radius: 7px;
+                    text-align: center;
+                    margin: 4px;
+                    padding: 6px 6px;
+                    display: flex;
+                    align-items: center;
+
+                    @media (min-width: 768px) {
+                        width: 100px;
+                        height: 50px;
+                    }
+
+
+                    span {
+                        font-size: 12px;
+                    }
+
+                    &:hover,
+                    &.Actived {
+                        background: linear-gradient(to right, $greenLogin, $greenSky);
+                        box-shadow: 0px 0px 7px rgba(6, 245, 155, 1);
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .VendorListsMobile {
+            position: absolute;
+            z-index: 5;
+            right: 15px;
+            top: 55px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 600px;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+            border-color: #32a624;
+            background: var(--color-bg-provider-mobile);
+            width: 300px;
+            .vendorItems {
+                width: 300px;
+                height: 70px;
+                //background: var(--color-bg-provider-mobile);
+                //color: var(--color-fg);
+                color: var(--color-fg-provider-mobile);
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                padding-left: 25px;
+
+                span {
+                    font-size: 18px;
+                }
+
+                &:hover,
+                &.Actived {
+                    color: var(--color-fg); //$white;
+                    font-weight: 500;
+                    background-color: #32a624;
+                    //background: linear-gradient(to right, $greenLogin, $greenSky);
+                    //box-shadow: 0px 0px 7px rgba(6, 245, 155, 1);
+                }
+            }
+        }
+
+        .CategoriesList {
+            &:not(.carousel) {
+                display: flex;
+                flex: 1;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            &.carousel {
+                .Header {
+                    display: none;
+                }
+            }
+
+            #CategoriesSlide {
+                .carousel__content {
+                    justify-content: center;
+                }
+            }
+
+            .CategoryItem {
+                margin: 4px 6px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    min-width: 178px;
+                    width: auto;
+                    padding: 0 4px;
+                    height: 51px;
+                    background: var(--color-bg-category);
+                    border-radius: 6px;
+                    color: $white;
+
+                    &:hover,
+                    &.Actived {
+                        background: linear-gradient(to right, $greenLogin, $greenSky);
+                    }
+
+                    .Icon {
+                        width: 30px;
+                        margin: 0 6px;
+                        padding: 3px 4px;
+                    }
+
+                    .Content {
+                        display: flex;
+                        flex-direction: column;
+
+                        .sum-game {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .TitleCate {
+        margin: 0 auto;
+        padding: 0 20px;
+
+        span {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            @media (min-width:564px) {
+                font-size: 26px;
+            }
+
+            &:nth-child(2) {
+                color: $green;
+            }
+        }
+
+    }
+
+    .categoriesHome {
+
+        &:not(.carousel) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: auto;
+            align-items: stretch;
+        }
+
+        &.live-casino {
+            grid-template-columns: repeat(1, 1fr);
+
+            &.carousel {
+                padding: 0 20px;
+            }
+
+            .livecasinocontent,
+            .carousel__content {
+                background: linear-gradient(90deg, rgba(14, 29, 16, 1) 0%, rgb(43, 55, 45) 50%, rgb(14, 29, 16) 100%);
+                border-radius: 10px;
+                margin: 0;
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+
+                @media (min-width:768px) {
+                    margin: 0;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+            .livecasinocontent {
+                padding: 20px;
+
+                .LiveCasinocategory {
+                    flex: 1;
+                    text-align: center;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .carousel__content {
+                padding: 10px 0;
+
+                .LiveCasinocategory {
+                    flex: 1;
+                    text-align: center;
+                    width: 178px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+
+        .categoryItem {
+            min-width: 125px;
+            width: auto;
+            min-height: 86px; //44px;
+            margin: 10px 12px;
+            background: var(--color-bg-category);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+
+            // @media (min-width: 445px) {
+            //     width: 205px;
+            // }
+
+            // @media (min-width: 768px) {
+            //     margin: 10px auto;
+            //     width: 145px;
+            // }
+
+            @media (min-width: 1024px) {
+                min-height: 64px;
+                min-width: 178px;
+                //For hp category
+                margin: 10px 2px;
+            }
+
+            @media (min-width: 1268px) {
+                min-height: 91px;
+                min-width: 224px;
+                //For hp category
+                margin: 10px 12px;
+            }
+
+            .Icon {
+                position: absolute;
+                top: -12px;
+                left: 8px;
+                width: 100px; //60px;
+
+                @media (min-width: 768px) {
+                    width: 48px;
+                }
+
+                @media (min-width: 1024px) {
+                    width: 68px;
+                }
+
+                @media (min-width: 1268px) {
+                    width: 92px;
+                }
+            }
+
+            .Title {
+                padding: 6px 6px 6px 130px; //79px;
+                font-size: 20px; //12px;
+                line-height: 1;
+                color: $white;
+                font-family: Poppins-Medium;
+                text-transform: uppercase;
+                word-break: break-word;
+                margin-right: 20px;
+                @media (min-width: 768px) {
+                    padding: 6px 6px 6px 58px;
+                    font-size: 20px; //12px;
+                }
+
+                @media (min-width: 1024px) {
+                    padding: 6px 4px 6px 80px;
+                    font-size: 16px; //14px;
+                }
+
+                @media (min-width: 1268px) {
+                    padding: 6px 4px 6px 109px;
+                    font-size: 20px; //16px;
+                }
+            }
+            &:hover {
+                box-shadow: 0px 0px 20px rgba(6, 245, 155, 0.47);
+            }
+        }
+        // &.carousel .carousel__wrapper .carousel__content {
+        //     display: flex;
+        // }
+    }
+}
+
+.PageCasino.casino section.category-games {
+    .category-list {
+        .CategoriesList .group-item{
+            @media (min-width: 1450px) {
+                display: grid; //Until we fix LastPlayGame
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+    }
+}
+
+section.LastestBets {
+    margin: 20px auto 0;
+    padding: 0 16px;
+
+    .MobileTitle,
+    .MobileTitle span {
+        font-size: 20px;
+        width: 70%;
+        text-transform: uppercase;
+        font-family: Poppins-Medium;
+        white-space: break-spaces;
+        margin: 10px 0;
+        color: var(--color-fg-menu);
+
+        @media (min-width:564px) {
+            font-size: 26px;
+        }
+
+        &:nth-child(2) {
+            color: $green;
+        }
+    }
+
+    .TransactionLists {
+        background: var(--color-bg-lastestbet);
+        color: var(--color-fg-lastestbet);
+        border-radius: 7px;
+        padding: 13px 8px;
+        max-height: 500px;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin-bottom: 30px;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @media (min-width: 768px) {
+            padding: 0;
+            max-height: unset;
+            overflow-y: unset;
+        }
+
+        .TransactionItems {
+            display: flex;
+            flex-direction: column;
+            padding: 0 12px;
+            height: 76px;
+            align-items: center;
+            font-size: 16px;
+            margin: 0 6px 0;
+            justify-content: center;
+            font-family: Poppins-Medium;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 0;
+            }
+
+            .ContentName,
+            .ContentGameName {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                font-family: Poppins-Medium;
+
+                span {
+                    font-family: Poppins-Medium;
+                    font-size: 16px;
+                }
+
+                .Credit {
+                    color: $green;
+                }
+
+                .Debit {
+                    color: $red;
+                }
+            }
+
+            .GameName {
+                flex: 50%;
+
+                @media (min-width: 768px) {
+                    flex: 1;
+                }
+            }
+
+            .PlayerName {
+                flex: 50%;
+                text-align: right;
+
+                @media (min-width: 768px) {
+                    flex: 1;
+                    text-align: left;
+                }
+            }
+
+            .Time {
+                flex: 50%;
+
+                @media (min-width: 768px) {
+                    flex: 1;
+                }
+            }
+
+            .Bet {
+                flex: 1;
+
+                .Credit {
+                    color: $green;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .Debit {
+                    color: $red;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+
+            .Status {
+                flex: 1;
+                text-align: right;
+
+                @media (min-width: 768px) {
+                    text-align: left;
+                }
+
+                .Credit {
+                    color: $green;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+
+                .Debit {
+                    color: $red;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+
+            &:nth-child(odd) {
+                background: var(--color-bg-lastestbet-odd);
+                margin: 0 6px 0;
+
+                @media (min-width: 768px) {
+                    &:first-child {
+                        background: transparent;
+                    }
+                }
+
+                &:last-child {
+                    margin: 0 6px 6px;
+                }
+            }
+
+            &:nth-child(even) {
+                background: var(--color-bg-lastestbet-even);
+                margin: 0 6px 0;
+            }
+
+        }
+    }
+}
+
+section.promotions {
+    .PromotionsContainer {
+        display: flex;
+        flex-wrap: wrap;
+
+        .PromotionItem {
+            flex: 50%;
+            position: relative;
+
+            &.FirstItem {
+                flex: 100%;
+            }
+
+            .promotionContent {
+                position: absolute;
+
+                .promotion-content p {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    font-size: 16px; //14px;
+                }
+            }
+        }
+    }
+}
+
+.body-custom {
+
+    .category-games,
+    .SectionHomeGame,
+    .TotalJackpot,
+    .LiveMatches,
+    .LastestBets,
+    .ProviderSlide,
+    .promotions,
+    .promotions-details {
+        max-width: 100%;
+        margin: 0 auto;
+
+        @media (min-width:1180px) {
+            //max-width: 80%;
+        }
+    }
+}
+
+section.account {
+    .container-custom {
+        max-width: 100%;
+
+        @media (min-width: 1240px) {
+            max-width: 100%;
+        }
+    }
+}
+
+.PageCasino {
+    max-width: 98%;
+    margin: 0 auto;
+    padding-top: 4px;
+
+    @media (min-width:768px) {
+        max-width: 97%; //80%;
+    }
+
+    .category-games {
+        max-width: 100%;
+
+        .category-list .container {
+            max-width: 100%;
+        }
+    }
+}
+
+// .modal-backdrop {
+//     top: 81px;
+// }
+
+.menus-totalBalance-modal {
+    top: 81px;
+
+    .modal-dialog {
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 100%;
+
+        @media (min-width: 600px) {
+            right: 40px;
+            width: 522px;
+        }
+
+        .modal-content {
+            background-color: transparent;
+
+            .TotalBalanceCollapse,
+            .ProfileCollapse {
+                width: 100%;
+                background: var(--color-bg);
+                display: flex;
+                flex-direction: column;
+                right: 0px;
+                padding: 20px;
+                border-radius: 7px;
+                position: absolute;
+                top: -1px;
+                color: var(--color-fg-menu);
+
+                @media (min-width: 600px) {
+                    width: 90%;
+                    right: 10px;
+                }
+
+                .Title {
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                    font-family: Poppins-Medium;
+                }
+
+                .ProfileName {
+                    display: flex;
+                    align-items: center;
+                    padding: 16px 0;
+                    border-top: 1px solid var(--color-border-profile-pop);
+                    border-bottom: 1px solid var(--color-border-profile-pop);
+
+                    .IconAvatar {
+                        width: 67px;
+                        height: 67px;
+                        margin-right: 8px;
+                    }
+
+                    .Fullname {
+                        font-size: 28px; //38px;
+                        font-family: Poppins-Medium;
+                        padding-left: 10px;
+                    }
+                }
+
+                .UserVerification {
+                    padding: 16px 0;
+                    border-bottom: 1px solid var(--color-border-profile-pop);
+
+                    span {
+                        font-size: 17px;
+                        font-family: Poppins-Regular;
+                        position: relative;
+                        padding: 20px 0 0 36px;
+
+                        &.Verified {
+                            color: $green;
+
+                            &:before {
+                                content: "";
+                                background: url('/static/images/check_mark.svg');
+                                width: 20px;
+                                height: 20px;
+                                display: block;
+                                position: absolute;
+                                top: 22px;
+                            }
+                        }
+
+
+                        &.UnVerified {
+                            color: $red;
+
+                            &:before {
+                                content: "";
+                                background: url('/static/images/exclamation.svg');
+                                width: 20px;
+                                height: 20px;
+                                display: block;
+                                position: absolute;
+                                top: 22px;
+                            }
+                        }
+                    }
+                }
+
+                .Balance {
+                    display: flex;
+                    padding: 16px 0;
+                    border-top: 1px solid var(--color-border-profile-pop);
+                    border-bottom: 1px solid var(--color-border-profile-pop);
+                    font-family: Poppins-Medium;
+
+                    .Bonus {
+                        padding-right: 20px;
+                        color: #D88B19;
+                    }
+                    
+                    .Total,
+                    .Bonus,
+                    .RealMoney {
+                        display: flex;
+                        flex: 1;
+                        flex-direction: column;
+
+                        small {
+                            opacity: 0.4;
+                        }
+
+                        .Money {
+                            font-size: 24px; //38px;
+                            font-family: Poppins-Medium;
+                        }
+                    }
+                }
+
+                .LinkWithdraw {
+                    display: flex;
+                    font-family: Montserrat-Medium;
+
+                    .withdraw {
+                        flex: 40%;
+                        padding-right: 4px;
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+
+                    .deposit {
+                        flex: 60%;
+                        padding-left: 4px;
+
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .btn {
+                    height: 47px;
+                    padding: 12px;
+                }
+            }
+        }
+    }
+}
+
+.withdraw-page {
+    .payment-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .payment-method-container {
+            max-width: 250px;
+            width: auto;
+            position: relative;
+            margin: 5px auto;
+
+            @media (min-width:500px) {
+                margin: 10px;
+            }
+
+            .Image {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .ContentHover {
+                display: none;
+                position: absolute;
+                top: 0;
+                background: linear-gradient(164deg, #00BBFF, #005FFF);
+                flex-direction: column;
+                top: 0;
+                width: 100%;
+                left: 0;
+                padding: 4px;
+                border-radius: 7px;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                color: $white;
+                font-size: 12px;
+
+                @media (min-width:668px) {
+                    font-size: 14px;
+                }
+                .Title{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                    text-align: center;
+                }
+                .content {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    margin-bottom: 6px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    .Processing,
+                    .Limit {
+                        flex: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        span {
+                            font-size: 14px; //12px;
+
+                            @media (min-width:668px) {
+                                font-size: 16px; //14px;
+                            }
+                        }
+                    }
+
+                    .Limit {
+                        border-left: 1px solid;
+                    }
+                }
+            }
+
+            &:hover {
+                .ContentHover {
+                    display: flex;
+                }
+            }
+
+            .Button button {
+                background: $green;
+                border: 2px solid $white;
+                border-radius: 7px;
+                font-size: 14px;
+                color: $white;
+                font-weight: 600;
+                padding: 4px 10px;
+            }
+        }
+    }
+}
+
+.SwitchTheme {
+    display: none;
+
+    @media (min-width:768px) {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+.sportPage {
+    .navbar-headerbar {
+        width: calc(100vw * 1.333) !important;
+        transform: scale(0.75);
+        transform-origin: 0 0;
+
+        .menubar {
+            @media (min-width:768px) {
+                padding: 0 14px 0 0;
+            }
+        }
+    }
+
+    #menu .content-menu,
+    #subMenu .content-menu {
+        width: calc(83vw * 1.333);
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        height: calc(100% * 1.333);
+    }
+
+    // .footer {
+    //     width: calc(100vw * 1.333);
+    //     transform: scale(0.75);
+    //     transform-origin: 0 0;
+    // }
+
+    .sticky-footer {
+        width: calc(100vw * 1.24);
+        transform: scale(0.8);
+        transform-origin: 0 0;
+        bottom: -15px;
+        display: flex;
+
+        @media (min-width:768px) {
+            display: none;
+        }
+    }
+
+    &.modal {
+        width: calc(100vw * 1.333);
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        height: calc(100vh * 1.333);
+    }
+
+    &.register .modal-dialog.modal-dialog-centered {
+        max-height: calc(80vh * 1.333);
+    }
+
+    &.menus-totalBalance-modal {
+        top: 44px;
+    }
+}

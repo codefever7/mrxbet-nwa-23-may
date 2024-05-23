@@ -1,0 +1,83 @@
+@import "../core/var";
+$gRtpGray: #3a393e;
+$gRtpGrayLight: #e6e6e6;
+
+section.game-rtp {
+  table.table-bordered {
+    thead {
+      tr {
+        th {
+          background-color: $grayDark;
+          color: $white;
+          border: 1px solid $gRtpGray;
+          position: relative;
+        }
+
+        th.active {
+          background-color: $redDark;
+          border: 1px solid $redDark;
+        }
+
+        th.asc,
+        th.desc {
+          padding-right: 34px;
+        }
+
+        th.asc:after {
+          content: '';
+          position: absolute;
+          right: 10px;
+          top: 0;
+          height: 100%;
+          width: 20px;
+          background-image: url("/static/images/Casino_Arrow_Down.png");
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position: center;
+        }
+
+        th.desc:after {
+          content: '';
+          position: absolute;
+          right: 10px;
+          top: 0;
+          height: 100%;
+          width: 20px;
+          background-image: url("/static/images/Casino_Arrow_Up.png");
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position: center;
+        }
+      }
+    }
+
+    tr {
+      td,
+      th {
+        border: 1px solid $gRtpGray;
+        padding: 10px;
+      }
+
+      td.first {
+        border-left: 0;
+      }
+
+      td.last {
+        border-right: 0;
+      }
+
+      th {
+        border-top: 0;
+      }
+
+      td {
+        background-color: $gRtpGrayLight;
+        border-bottom: 0;
+
+        img {
+          height: 20px;
+        }
+      }
+    }
+  }
+}

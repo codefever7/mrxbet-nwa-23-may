@@ -1,0 +1,55 @@
+@import "../core/var";
+
+.reality-check-container {
+    .form-check-input {
+        margin-top: 5px;
+        label {
+            margin-bottom: 10px;
+        }
+    }
+    .reality-note {
+        padding: 10px;
+        border: 1px solid $red;
+        margin: 15px;
+    }
+    .reality-list {
+        margin-bottom: 15px;
+    }
+    .reality-radio {
+        margin: 10px 0;
+    }
+    .reality-check {
+        margin: 15px;
+    }
+    .radio-custom input[type="radio"]::after {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        top: 0px;
+        left: -1px;
+        background: $grayLighter;
+        position: absolute;
+    }
+    .radio-custom input[type="radio"]::before {
+        font-family: 'jb-font';
+        content: "\e858";
+        top: -5px;
+        left: -1px;
+        z-index: 1;
+        font-weight: bold;
+        position: absolute;
+        color: $red;
+    }
+    .radio-custom input[type="radio"]:checked::before {
+        font-family: 'jb-font';
+        content: "\e857";
+        color: $red;
+    }
+    .jumbotron {
+        padding: 10px;
+        margin-top: 10px;
+        background: $grayLighter;
+        color: $grayDarker;
+    }
+}

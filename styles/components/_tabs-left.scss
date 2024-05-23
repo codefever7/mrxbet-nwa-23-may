@@ -1,0 +1,290 @@
+@import "../core/var";
+
+section.tabs-left {
+    a {
+        color: $green;
+
+        &:hover {
+            color: $greenLight;
+        }
+    }
+
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .nav {
+        .icon {
+            width: 50px;
+            padding: 5px 10px;
+            background: $black;
+            margin-right: 10px;
+        }
+
+        a {
+            background: $grayDark;
+            color: $white;
+            border-bottom: 1px solid $grayLight;
+            line-height: 1;
+        }
+
+        a:hover {
+            color: $white;
+            background: $redDark;
+        }
+
+        a.active {
+            background: $redDark;
+        }
+    }
+
+    .jumbotron {
+        padding: 15px;
+        background: var(--color-bg-accountpage);
+        border-radius: 11px;
+
+        h2 {
+            padding-bottom: 14px;
+        }
+    }
+
+    .accordion {
+        .card {
+            border-radius: 0;
+            border: 0;
+        }
+
+        .active.card-header {
+            // .jb-icon {
+            //     color: $green;
+            // }
+        }
+
+        .card-header {
+            color: $white;
+            border-radius: 0;
+            border-bottom: 0;
+            font-family: Montserrat-Medium;
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 5px 0;
+            background-color: transparent;
+
+            .row {
+                margin-right: 0;
+                margin-left: 0;
+                cursor: pointer;
+
+                .title {
+                    display: -webkit-box;
+                    -webkit-align-self: center;
+                    line-height: 1;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    min-height: 45px;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    opacity: 0.75;
+
+                    span {
+                        font-size: 18px;
+                        margin-bottom: 5px;
+                        color: var(--color-fg);
+                    }
+                }
+
+                .icon {
+                    opacity: 0.75;
+                }
+
+                &:hover {
+                    .icon {
+                        opacity: 1;
+                    }
+                    .title {
+                        opacity: 1;
+                        &:after {
+                            content: "";
+                            width: 47px;
+                            height: 4px;
+                            display: block;
+                            bottom: 0px;
+                            position: absolute;
+                            border-radius: 4px;
+                            background: linear-gradient(to right, $greenLogin , $greenSky);
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                .icon {
+                    opacity: 1;
+                }
+                .title {
+                    opacity: 1;
+                    &:after {
+                        content: "";
+                        width: 47px;
+                        height: 4px;
+                        display: block;
+                        bottom: 0px;
+                        position: absolute;
+                        border-radius: 4px;
+                        background: linear-gradient(to right, $greenLogin , $greenSky);
+                    }
+                }
+            }
+        }
+
+        .card-header.collapse.show {
+            color: $white;
+            background: $redDark;
+        }
+
+        .card-body {
+            background: var(--color-bg-accountpage);
+        }
+    }
+
+    .jb-icon {
+        font-size: 26px;
+        line-height: 26px;
+        margin: 5px 0;
+        color: var(--color-fg);
+    }
+
+    table.table-bordered {
+        border: 1px solid var(--color-bg-accountpage);
+        thead {
+            display: table;
+            overflow: auto;
+            width: 100%;
+
+            tr {
+                th {
+                    background-color: var(--color-bg);
+                    color:  var(--color-fg);
+                    border: 1px solid var(--color-bg-accountpage);
+                    position: relative;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                th.active {
+                    background-color: $green;
+                    border: 1px solid $green;
+                }
+
+                th.asc,
+                th.desc {
+                    padding-right: 34px;
+                }
+
+                th.asc:after {
+                    content: '';
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    height: 100%;
+                    width: 20px;
+                    background-image: url("/static/images/Casino_Arrow_Down.png");
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: center;
+                }
+
+                th.desc:after {
+                    content: '';
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    height: 100%;
+                    width: 20px;
+                    background-image: url("/static/images/Casino_Arrow_Up.png");
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: center;
+                }
+            }
+        }
+
+        tbody {
+            display: block;
+            height: 720px;
+            overflow: auto;
+            width: 100%;
+        }
+
+        tbody {
+            tr {
+                display: table;
+                width: 100%;
+            }
+        }
+
+        tr {
+
+            td,
+            th {
+                border: 1px solid var(--color-bg-accountpage);
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            td.first,
+            th.first {
+                border-left: 0;
+                width: 50px;
+            }
+
+            th.last {
+                border-right: 0;
+                width: 125px;
+            }
+
+            td.last {
+                border-right: 0;
+                text-align: right;
+                width: 120px;
+                color: #000;
+            }
+
+            th {
+                border-top: 0;
+            }
+
+            td {
+                background-color: $gRtpGrayLight;
+                border-bottom: 0;
+
+                img {
+                    height: 20px;
+                    width: 35px;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(mobile, max) {
+
+        .jumbotron {
+            display: none;
+        }
+
+        table.table-bordered {
+            tbody {
+                height: 450px;
+            }
+        }
+    }
+
+    @include breakpoint(mobile, min) {
+        // .card-body {
+        //     display: none;
+        // }
+    }
+}

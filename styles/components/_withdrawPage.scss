@@ -1,0 +1,292 @@
+@import "../core/var";
+$wdGray: #e5e5e5;
+$wdGray2: #ebebeb;
+
+.deposit-page,
+.withdraw-page {
+  background: var(--color-bg-accountpage);
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  .DepositTitle {
+    font-size: 20px;
+    font-family: Montserrat-Medium;
+    padding: 0 10px;
+  }
+
+  .deposit-form,
+  .withdraw-form {
+    background-color: transparent;
+    padding: 10px;
+
+    .step-body-1,
+    .step-body-2,
+    .step-body-3,
+    .step-body-4,
+    .step-body-5 {
+      .title {
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .payment-form {
+        .form-control {
+          border-radius: 0;
+          // background-color: $gray;
+          // border: 1px solid $gray;
+          background-clip: unset;
+          background: transparent;
+          border: 1px solid $green;
+          border-radius: 8px;
+          color: var(--color-fg);
+        }
+
+        select {
+          -webkit-appearance: none;
+          -webkit-border-radius: 0px;
+          -moz-appearance: none;
+          background-image: url("/static/images/RegisterPage_DropDown.png");
+          background-position: right 10px top 50%;
+          background-repeat: no-repeat;
+          padding-right: 1.5em;
+          background-size: 10px;
+
+          option {
+            color: $black;
+          }
+        }
+
+        .has-error {
+          input {
+            border: 1px solid #9d261d !important;
+          }
+
+          input:focus {
+            border-color: #9d261d !important;
+            box-shadow: 0 0 0 0.2rem rgba(157, 38, 29, 0.25) !important;
+          }
+        }
+      }
+
+      .payment-list {
+        background-color: transparent;
+
+        .detail-payment {
+          display: flex;
+          justify-content: space-between;
+
+          .detail-payment-group {
+            display: flex;
+            text-align: end;
+
+            .group-t0 {
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+
+        .row {
+          // padding: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid $white;
+        }
+
+        .row.last,
+        .row:last-child {
+          border-bottom: 0;
+        }
+
+      }
+
+      .payment-list-row {
+        display: flex;
+        flex-direction: column;
+
+        .payment-method-container-row {
+          display: flex;
+          padding: 10px 0;
+          border-bottom: 1px solid $lastbetOddBg;
+          flex-wrap: wrap;
+          align-items: center;
+
+          @media (min-width: 680px) {
+            flex-wrap: nowrap;
+          }
+
+          &:first-child {
+            border-top: 1px solid $lastbetOddBg;
+          }
+
+          .Image,
+          .logo {
+            flex: 40%;
+
+            @media (min-width: 500px) {
+              flex: 190px;
+            }
+
+            img,
+            svg {
+              max-width: 180px;
+              width: 100%;
+            }
+          }
+
+          .TitleDescriptionsWeb {
+            flex: 60%;
+            display: flex;
+            flex-direction: column;
+
+            @media (min-width: 500px) {
+              flex: calc(100% - 190px);
+            }
+
+            @media (min-width: 650px) {
+              flex: calc(100% - 340px);
+            }
+
+            @media (min-width: 820px) {
+              flex-direction: row;
+            }
+
+            .processing,
+            .transaction-limit {
+              flex: 1;
+              text-transform: uppercase;
+              font-family: Poppins-Medium;
+              text-align: left;
+              margin-left: 16px;
+              display: flex;
+              flex-direction: row;
+
+              @media (min-width: 820px) {
+                text-align: right;
+                margin-left: 0;
+                flex-direction: column;
+              }
+
+
+              span {
+                &.yellow {
+                  color: var(--color-fg-payment);
+                }
+              }
+            }
+
+            .name {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              text-transform: uppercase;
+              font-family: Poppins-Medium;
+              margin-left: 16px;
+            }
+          }
+
+          .LinkButton {
+            flex: 100%;
+            text-align: center;
+            margin: 6px 0;
+
+            @media (min-width: 650px) {
+              flex: 150px;
+            }
+
+            @media (min-width: 680px) {
+              text-align: right;
+              margin: auto;
+            }
+
+            a {
+              width: 100%;
+
+              &:not([href]):not([tabindex]){
+                color: $white;
+              }
+
+              &.buttonWithdraw {
+                height: 100%;
+              }
+
+              @media (min-width: 680px) {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+
+      .btn-success {
+        background-color: $green;
+        border-color: $green;
+        border-radius: 0;
+        margin: 5px;
+      }
+
+      .btn-secondary {
+        background-color: $red;
+        border-color: $red;
+        border-radius: 0;
+        margin: 5px;
+      }
+
+      .btn-secondary:active,
+      .btn-secondary:focus,
+      .btn-secondary:not(:disabled):not(.disabled).active,
+      .btn-secondary:not(:disabled):not(.disabled).active:focus,
+      .btn-secondary:not(:disabled):not(.disabled):active,
+      .btn-secondary:not(:disabled):not(.disabled):active:focus {
+        background-color: $redDark;
+        border-color: $redDark;
+        box-shadow: initial;
+      }
+
+      .btn-success:active,
+      .btn-success:focus,
+      .btn-success:not(:disabled):not(.disabled).active,
+      .btn-success:not(:disabled):not(.disabled).active:focus,
+      .btn-success:not(:disabled):not(.disabled):active,
+      .btn-success:not(:disabled):not(.disabled):active:focus {
+        background-color: $green;
+        border-color: $green;
+        box-shadow: initial;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .step-body-1 {
+      .btn-success {
+        height: 100%;
+      }
+    }
+
+    .step-body-2 {
+      .logo {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        border-top: 1px solid $white;
+      }
+
+      .form-group {
+        margin-bottom: 5px;
+      }
+    }
+
+    .step-body-4 {
+      #frame_withdraw {
+        border: 0;
+      }
+    }
+  }
+
+
+}

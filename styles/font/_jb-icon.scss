@@ -1,0 +1,144 @@
+/* font icons */
+i, span  {
+   &.jb-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'jb-font';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+  }
+
+  &.icon-default:before { content: '\e869'; } /* '' */
+  &.baccarat:before { content: '\e800'; } /* '' */
+  &.basketball:before { content: '\e801'; } /* '' */
+  &.become-a-jetbull-legend:before { content: '\e802'; } /* '' */
+  &.blackjack:before { content: '\e803'; } /* '' */
+  &.blog:before { content: '\e804'; } /* '' */
+  &.casino-active-allgames:before { content: '\e805'; } /* '' */
+  &.casino-active-classicslots:before { content: '\e806'; } /* '' */
+  &.casino-active-favorite:before { content: '\e807'; } /* '' */
+  &.casino-active-jackpotgames:before { content: '\e808'; } /* '' */
+  &.casino-active-movieslots:before { content: '\e809'; } /* '' */
+  &.casino-active-multiplayer:before { content: '\e80a'; } /* '' */
+  &.casino-active-newestgames:before { content: '\e80b'; } /* '' */
+  &.casino-active-othergames:before { content: '\e80c'; } /* '' */
+  &.casino-active-populargames:before { content: '\e80d'; } /* '' */
+  &.casino-active-scratchcards:before { content: '\e80e'; } /* '' */
+  &.casino-active-tablegames:before { content: '\e80f'; } /* '' */
+  &.casino-active-videobingos:before { content: '\e810'; } /* '' */
+  &.casino-active-videopokers:before { content: '\e811'; } /* '' */
+  &.casino-active-videoslots:before { content: '\e812'; } /* '' */
+  &.casino-arrow-left:before { content: '\e813'; } /* '' */
+  &.casino-arrow-right:before { content: '\e814'; } /* '' */
+  &.casino-inactive-allgames:before { content: '\e815'; } /* '' */
+  &.casino-inactive-classicslots:before { content: '\e816'; } /* '' */
+  &.casino-inactive-favorite:before { content: '\e817'; } /* '' */
+  &.casino-inactive-jackpotgames:before { content: '\e818'; } /* '' */
+  &.casino-inactive-movieslots:before { content: '\e819'; } /* '' */
+  &.casino-inactive-multiplayer:before { content: '\e81a'; } /* '' */
+  &.casino-inactive-newestgames:before { content: '\e81b'; } /* '' */
+  &.casino-inactive-othergames:before { content: '\e81c'; } /* '' */
+  &.casino-inactive-populargames:before { content: '\e81d'; } /* '' */
+  &.casino-inactive-scratchcards:before { content: '\e81e'; } /* '' */
+  &.casino-inactive-tablegames:before { content: '\e81f'; } /* '' */
+  &.casino-inactive-videobingos:before { content: '\e820'; } /* '' */
+  &.casino-inactive-videopokers:before { content: '\e821'; } /* '' */
+  &.casino-inactive-videoslots:before { content: '\e822'; } /* '' */
+  &.deposit:before { content: '\e823'; } /* '' */
+  &.dice:before { content: '\e824'; } /* '' */
+  &.faq:before { content: '\e825'; } /* '' */
+  &.favorite:before { content: '\e826'; } /* '' */
+  &.game-1square:before { content: '\e827'; } /* '' */
+  &.game-2square:before { content: '\e828'; } /* '' */
+  &.game-4square:before { content: '\e829'; } /* '' */
+  &.game-contract:before { content: '\e82a'; } /* '' */
+  &.game-expand:before { content: '\e82b'; } /* '' */
+  &.game-play:before { content: '\e82c'; } /* '' */
+  &.game-plus-1:before { content: '\e82d'; } /* '' */
+  &.game-plus-2:before { content: '\e82e'; } /* '' */
+  &.game-replace:before { content: '\e82f'; } /* '' */
+  &.game-setting:before { content: '\e830'; } /* '' */
+  &.game-star:before { content: '\e831'; } /* '' */
+  &.holdem:before { content: '\e832'; } /* '' */
+  &.home:before { content: '\e833'; } /* '' */
+  &.hot:before { content: '\e834'; } /* '' */
+  &.i:before { content: '\e835'; } /* '' */
+  &.jackpot:before { content: '\e836'; } /* '' */
+  &.jetbull-slot-game:before { content: '\e837'; } /* '' */
+  &.live-casino:before { content: '\e838'; } /* '' */
+  &.live-now:before { content: '\e839'; } /* '' */
+  &.live-today:before { content: '\e83a'; } /* '' */
+  &.livecasino-active-all:before { content: '\e83b'; } /* '' */
+  &.livecasino-active-baccarat:before { content: '\e83c'; } /* '' */
+  &.livecasino-active-blackjack:before { content: '\e83d'; } /* '' */
+  &.livecasino-active-casinoholdem:before { content: '\e83e'; } /* '' */
+  &.livecasino-active-dice:before { content: '\e83f'; } /* '' */
+  &.livecasino-active-poker:before { content: '\e840'; } /* '' */
+  &.livecasino-active-roulette:before { content: '\e841'; } /* '' */
+  &.livecasino-active-sicbo:before { content: '\e842'; } /* '' */
+  &.livecasino-inactive-all:before { content: '\e843'; } /* '' */
+  &.livecasino-inactive-baccarat:before { content: '\e844'; } /* '' */
+  &.livecasino-inactive-blackjack:before { content: '\e845'; } /* '' */
+  &.livecasino-inactive-casinoholdem:before { content: '\e846'; } /* '' */
+  &.livecasino-inactive-dice:before { content: '\e847'; } /* '' */
+  &.livecasino-inactive-poker:before { content: '\e848'; } /* '' */
+  &.livecasino-inactive-roulette:before { content: '\e849'; } /* '' */
+  &.livecasino-inactive-sicbo:before { content: '\e84a'; } /* '' */
+  &.lock:before { content: '\e84b'; } /* '' */
+  &.logout:before { content: '\e84c'; } /* '' */
+  &.lottery-lotto:before { content: '\e84d'; } /* '' */
+  &.new:before { content: '\e84e'; } /* '' */
+  &.newsletter:before { content: '\e84f'; } /* '' */
+  &.play-for-fun:before { content: '\e850'; } /* '' */
+  &.play-for-real:before { content: '\e851'; } /* '' */
+  &.poker:before { content: '\e852'; } /* '' */
+  &.popular-match:before { content: '\e853'; } /* '' */
+  &.promotions:before { content: '\e854'; } /* '' */
+  &.registerpage-arrow-left:before { content: '\e855'; } /* '' */
+  &.registerpage-arrow-right:before { content: '\e856'; } /* '' */
+  &.registerpage-checkbox-1:before { content: '\e857'; } /* '' */
+  &.registerpage-checkbox-2:before { content: '\e858'; } /* '' */
+  &.registerpage-checkbox-3:before { content: '\e859'; } /* '' */
+  &.registerpage-dropdown-1:before { content: '\e85a'; } /* '' */
+  &.registerpage-dropdown-2:before { content: '\e85b'; } /* '' */
+  &.registerpage-dropdown-3:before { content: '\e85c'; } /* '' */
+  &.registerpage-x:before { content: '\e85d'; } /* '' */
+  &.roulette:before { content: '\e85e'; } /* '' */
+  &.search:before { content: '\e85f'; } /* '' */
+  &.sidemenu-activebonuses:before { content: '\e860'; } /* '' */
+  &.sidemenu-changeemail:before { content: '\e861'; } /* '' */
+  &.sidemenu-changepassword:before { content: '\e862'; } /* '' */
+  &.sidemenu-deposit:before { content: '\e863'; } /* '' */
+  &.sidemenu-myprofile:before { content: '\e864'; } /* '' */
+  &.sidemenu-mysportsaccount:before { content: '\e865'; } /* '' */
+  &.sidemenu-pendingwithdrawals:before { content: '\e866'; } /* '' */
+  &.sidemenu-realitycheck:before { content: '\e867'; } /* '' */
+  &.sidemenu-responsiblegaming:before { content: '\e868'; } /* '' */
+  &.sidemenu-sportssetting:before { content: '\e869'; } /* '' */
+  &.sidemenu-transactionhistory:before { content: '\e86a'; } /* '' */
+  &.sidemenu-withdraw:before { content: '\e86b'; } /* '' */
+  &.sport-casino-online:before { content: '\e86c'; } /* '' */
+  &.tennis:before { content: '\e86d'; } /* '' */
+  &.user:before { content: '\e86e'; } /* '' */
+  &.virsualsport-active-allgame:before { content: '\e86f'; } /* '' */
+  &.virsualsport-active-carracing:before { content: '\e870'; } /* '' */
+  &.virsualsport-active-chariotracing:before { content: '\e871'; } /* '' */
+  &.virsualsport-active-greyhoundracing:before { content: '\e872'; } /* '' */
+  &.virsualsport-active-help:before { content: '\e873'; } /* '' */
+  &.virsualsport-active-horseracing:before { content: '\e874'; } /* '' */
+  &.virsualsport-inactive-allgame:before { content: '\e875'; } /* '' */
+  &.virsualsport-inactive-carracing:before { content: '\e876'; } /* '' */
+  &.virsualsport-inactive-chariotracing:before { content: '\e877'; } /* '' */
+  &.virsualsport-inactive-greyhoundracing:before { content: '\e878'; } /* '' */
+  &.virsualsport-inactive-help:before { content: '\e879'; } /* '' */
+  &.virsualsport-inactive-horseracing:before { content: '\e87a'; } /* '' */
+  &.winner:before { content: '\e87b'; } /* '' */
+  &.optin-monster:before { content: '\f23c'; } /* '' */
+}

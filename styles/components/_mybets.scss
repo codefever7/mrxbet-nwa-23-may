@@ -1,0 +1,43 @@
+@import "../core/var";
+.my-bets{
+   select.type {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        -moz-appearance: none;
+        background-image: url(/static/images/RegisterPage_DropDown.png);
+        background-position: right 10px top 50%;
+        background-repeat: no-repeat;
+        padding-right: 1.5em;
+        background-size: 10px;
+        background-clip: unset;
+        height: 50px !important;
+    }
+    // .tab-css{
+    //     background-color: $bg !important;
+    // }
+   
+    // .form-control {
+    //     display: block;
+    //     width: 100%;
+    //     padding: .375rem .75rem;
+    //     font-size: 1rem;
+    //     line-height: 1.5;
+    //     color: $grayDarker;
+    //     background-color: $white !important;
+    //     background-clip: padding-box;
+    //     border: 1px solid $grayMenu;
+    //     border-radius: .25rem;
+    //     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    // }
+    // .form-control {
+    //     font-size: 14px;
+    //     border: 1px solid $grayMenu !important;
+    //     color: $grayDarker !important;
+    // }
+    // .form-control:focus {
+    //     font-size: 14px;
+    //     border: 1px solid $grayMenu !important;
+    //     color: $grayDarker !important;
+    //     background-color: $white !important;
+    // }
+}

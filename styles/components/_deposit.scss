@@ -1,0 +1,1321 @@
+@import "../core/var";
+
+.deposit {
+    .was-validated.has-error .invalid-feedback {
+        display: block;
+    }
+
+    .err-card-number {
+        border: 1px solid $red;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+    }
+
+    .modal-content {
+        border-radius: 0;
+        border: 0;
+        background-color: var(--color-bg);
+        border-radius: 20px;
+
+        .modal-header {
+            .close-icon {
+                color: var(--color-fg);
+
+                span {
+                    font-size: 24px;
+                }
+
+                i.jb-icon {
+                    color: var(--color-fg);
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 0;
+
+            .content-step {
+                .filter-layout {
+                    background-color: transparent;
+                    color: var(--color-fg);
+
+                    .filter-payment {
+                        .btn-3 {
+                            border-radius: 8px;
+                        }
+                    }
+                }
+
+                .footer {
+                    background-color: transparent;
+                }
+
+                .bank-list.row {
+                    background-color: transparent;
+                    color: var(--color-fg);
+                }
+
+                .payment-list {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 20px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+
+                    a {
+                        cursor: pointer;
+                    }
+                }
+
+                .content-wp {
+                    .block-content {
+                        border-top-right-radius: 8px;
+                        border-top-left-radius: 8px;
+                    }
+
+                    .des {
+                        background-color: var(--color-bg-lastestbet);
+                        color: var(--color-fg);
+
+                        a.more {
+                            background-color: var(--color-bg-lastestbet);
+                            color: var(--color-fg);
+                        }
+
+                        .linear-text {
+                            background: linear-gradient(hsla(0, 0%, 100%, 0), var(--color-bg-lastestbet));
+                        }
+                    }
+
+                    .conditions {
+                        .conditions-content {
+                            color: var(--color-fg);
+                        }
+
+                    }
+                }
+
+                input,
+                select {
+                    &.form-control {
+                        border: 1px solid $green;
+
+                        &.input-form-n1 {
+                            border-radius: 10px;
+                            color: var(--color-fg);
+                            background-color: transparent;
+
+                            option {
+                                color: $black;
+                            }
+                        }
+
+                        &.date-birth {
+                            border-radius: 10px;
+                            padding: 0 5px;
+                        }
+                    }
+
+                    // &.form-control:invalid {
+                    //   border: 1px solid $red;
+                    // }
+                }
+
+                .form-label {
+                    color: var(--color-fg);
+                }
+
+                input[type="checkbox"]::after {
+                    content: " ";
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background: var(--color-bg);
+                    top: 2px;
+                    left: 0;
+                    position: absolute;
+                }
+
+                input[type="checkbox"]::before {
+                    content: " ";
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background-image: var(--url-uncheckbox);
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    z-index: 100;
+                    background-size: 20px;
+                    background-repeat: no-repeat;
+                }
+
+                input[type="checkbox"]:checked::before {
+                    background-image: var(--url-checkbox);
+                }
+            }
+        }
+    }
+
+    .content-step-0 {
+        .enter {
+            background-color: $green;
+        }
+
+        .exit {
+            background-color: $grayDarker;
+        }
+
+        button {
+            padding: 5px 15px;
+            border: 0;
+            color: $white;
+            width: 100px;
+        }
+    }
+
+    .content-step {
+        .filter-layout {
+            padding: 15px;
+            background-color: $grayLighter;
+            margin: 0;
+            color: $grayDarker;
+            margin-bottom: 15px;
+
+            .filter-payment {
+                display: flex;
+                flex-wrap: inherit;
+
+                select {
+                    -webkit-appearance: none;
+                    -webkit-border-radius: 0px;
+                    -moz-appearance: none;
+                    background-image: url("/static/images/RegisterPage_DropDown.png");
+                    background-position: right 10px top 50%;
+                    background-repeat: no-repeat;
+                    padding-right: 1.5em;
+                    background-size: 10px;
+                }
+            }
+
+            .btn-3 {
+                height: 35px;
+                width: 90px;
+                font-weight: 500;
+                border-radius: 0;
+                display: inline-flex;
+            }
+        }
+
+        .header {
+            padding: 1rem;
+
+            p {
+                color: $grayLight;
+            }
+        }
+
+        .body {
+            padding: 0 15px 15px;
+
+            form {
+                display: flex;
+                flex-wrap: wrap;
+
+                .conditions {
+                    display: flex;
+                    align-items: center;
+                    font-weight: normal;
+
+                    a {
+                        color: $blue;
+                    }
+                }
+
+                .conditions-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                }
+
+                .linear-text {
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                    background: linear-gradient(hsla(0, 0%, 100%, 0), $gray);
+                    height: 60px;
+                }
+
+                .conditions {
+                    p {
+                        color: $grayLight;
+                        font-size: 18px;
+                    }
+                }
+
+                .more {
+                    background-color: $gray;
+                }
+
+                .block-content {
+                    background-color: $green;
+                    color: $white;
+
+                    p {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        .step-body-1 {
+            .deposit-title {
+                color: $grayLight;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+            }
+
+            .bank-list.row {
+                padding: 5px 8px;
+                background-color: $grayWhiteSmoke;
+                border-bottom: 1px solid $bg;
+                color: $grayDarker;
+
+                p {
+                    margin: 0;
+                }
+
+                button {
+                    height: 100%;
+                    border-radius: inherit;
+                    text-transform: uppercase;
+                    max-height: 64px;
+                    background: $green;
+                }
+            }
+
+            .row.deposit-category-header {
+                background: none;
+            }
+
+            .text-content {
+                max-height: 550px;
+                overflow: auto;
+                margin-bottom: 10px;
+
+                .form-row {
+                    margin-top: 30px;
+                }
+
+                .active {
+                    background-color: $green;
+                }
+            }
+
+            .text-offer {
+                color: $red;
+            }
+
+            .block-content {
+                background-color: $green;
+                color: $white;
+
+                p {
+                    font-weight: normal;
+                }
+            }
+
+            .conditions {
+                display: flex;
+                align-items: center;
+                font-weight: normal;
+                color: $black;
+
+                a {
+                    color: $yellow;
+                }
+            }
+
+            .conditions-content {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            input[type="checkbox"]::after {
+                content: " ";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: $white;
+                top: 2px;
+                left: 0;
+                position: absolute;
+            }
+
+            input[type="checkbox"]::before {
+                content: " ";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url("/static/images/RegisterPage_CheckBox-6.png");
+                position: absolute;
+                top: 2px;
+                left: 0;
+                z-index: 100;
+                background-size: 20px;
+                background-repeat: no-repeat;
+            }
+
+            .content-wp {
+                // input[type="checkbox"]::before {
+                //     background-image: url("/static/images/RegisterPage_CheckBox-6.png");
+                // }
+
+                // input[type="checkbox"]:checked::before {
+                //     background-image: url("/static/images/RegisterPage_CheckBox-5.png");
+                // }
+
+                .des {
+                    background-color: $gray;
+                    color: $grayVeryDark;
+
+                    a {
+                        color: $yellow;
+
+                        &.more {
+                            color: $black;
+                        }
+                    }
+                }
+
+                .linear-text {
+                    left: 0;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                    background: linear-gradient(hsla(0, 0%, 100%, 0), $gray);
+                    height: 60px;
+                }
+
+                .more {
+                    background-color: $gray;
+                }
+            }
+
+            input[type="checkbox"]:checked::before {
+                background-image: url("/static/images/RegisterPage_CheckBox-5.png");
+            }
+
+            .footer-privacy {
+                display: flex;
+            }
+
+            .deposit-categories-logo {
+                padding-right: 5px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .step-body-2 {
+            form {
+                width: 100%;
+            }
+
+            .form-check-label {
+                padding-left: 8px;
+            }
+
+            .deposit-title {
+                color: var(--color-fg);
+                text-transform: uppercase;
+                margin-bottom: 8px;
+            }
+
+            .deposit-content {
+                background-color: transparent;
+            }
+
+            .bank-list.row {
+                padding: 3px;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                color: $grayDarker;
+
+                p {
+                    margin: 0;
+                }
+
+                button {
+                    height: 100%;
+                    border-radius: inherit;
+                    text-transform: uppercase;
+                    max-height: 64px;
+                }
+            }
+
+            .row.deposit-category-header {
+                background: none;
+            }
+
+            .text-content {
+                color: var(--color-fg);
+                max-height: 550px;
+                overflow: auto;
+                margin-bottom: 10px;
+
+                .active {
+                    background-color: $green;
+                }
+            }
+
+            .text-offer {
+                color: $red;
+            }
+
+            input[type="checkbox"]::after {
+                content: " ";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: $white;
+                top: 2px;
+                left: 0;
+                position: absolute;
+            }
+
+            input[type="checkbox"]::before {
+                content: " ";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url("/static/images/RegisterPage_CheckBox-6.png");
+                position: absolute;
+                top: 2px;
+                left: 0;
+                z-index: 100;
+                background-size: 20px;
+                background-repeat: no-repeat;
+            }
+
+            input,
+            select {
+                &.form-control {
+                    border: 1px solid $green;
+
+                    &.input-form-n1 {
+                        border-radius: 10px;
+                        color: var(--color-fg);
+                        background-color: transparent;
+
+                        option {
+                            color: $black;
+                        }
+                    }
+                }
+
+                // &.form-control:invalid {
+                //   border: 1px solid $red;
+                // }
+            }
+
+            .amount-input {
+                border-radius: 10px;
+                overflow: hidden;
+
+                input {
+                    border-radius: 10px 0 0 10px;
+                    background-color: transparent;
+                    color: var(--color-fg);
+                }
+            }
+
+            .content-wp {
+                input[type="checkbox"]::before {
+                    background-image: url("/static/images/RegisterPage_CheckBox-6.png");
+                }
+
+                input[type="checkbox"]:checked::before {
+                    background-image: url("/static/images/RegisterPage_CheckBox-5.png");
+                }
+
+                .des {
+                    background-color: $gray;
+                    color: $grayVeryDark;
+
+                    a {
+                        color: $yellow;
+
+                        &.more {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+
+            input[type="checkbox"]:checked::before {
+                background-image: url("/static/images/RegisterPage_CheckBox-5.png");
+            }
+
+            .footer-privacy {
+                display: flex;
+            }
+
+            .was-validated {
+                .invalid-feedback {
+                    display: block;
+                }
+            }
+
+            #credit-card-cvc-wrapper,
+            #credit-card-number-wrapper {
+                height: 40px;
+            }
+
+            .deposit-categories-logo {
+                padding-right: 5px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            iframe {
+                width: 100%;
+            }
+        }
+
+        .step-body-3 {
+            form {
+                display: block;
+            }
+
+            .bank-list.row {
+                padding: 5px 8px;
+                background-color: $grayWhiteSmoke;
+                border-bottom: 1px solid $bg;
+                color: $grayDarker;
+            }
+
+            .deposit-categories-logo {
+                padding-right: 5px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .step-body-4 {
+            iframe {
+                border: none;
+            }
+        }
+
+        .footer {
+            background-color: $gray;
+
+            .active {
+                background-color: $red;
+            }
+
+            div {
+                width: 33.33%;
+                height: 10px;
+            }
+        }
+    }
+
+    .btn-success {
+        background-color: $dpGreen;
+        border-color: $dpGreen;
+        border-radius: 0;
+    }
+
+    .btn-success:active,
+    .btn-success:focus,
+    .btn-success:not(:disabled):not(.disabled).active,
+    .btn-success:not(:disabled):not(.disabled).active:focus,
+    .btn-success:not(:disabled):not(.disabled):active,
+    .btn-success:not(:disabled):not(.disabled):active:focus {
+        background-color: $dpGreen;
+        border-color: $dpGreen;
+        box-shadow: initial;
+    }
+
+    .btn-back {
+        color: $white;
+        background-color: $dbGray;
+        border-color: $dbGray;
+        border-radius: 0;
+    }
+
+    .btn-close {
+        color: $white;
+        background-color: $dbRed;
+        border-color: $dbRed;
+        border-radius: 0;
+    }
+
+    .p-l-10 {
+        padding-left: 10px;
+    }
+
+    .p-r-0 {
+        padding-right: 0;
+    }
+
+    .m-b-5 {
+        margin-bottom: 5px;
+    }
+
+    .alert {
+        border-radius: 2px;
+        text-align: center;
+        padding: 4.75rem 1.25rem;
+
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+
+    .alert-success {
+        color: #000;
+    }
+}
+
+.deposit.step-0 {
+    .modal-dialog {
+        max-width: 400px;
+    }
+
+    .modal-body {
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+.deposit {
+    .modal-dialog {
+        max-width: 900px;
+
+        .modal-body {
+            min-height: 550px;
+        }
+    }
+}
+
+.deposit-page {
+    background: var(--color-bg-accountpage);
+    padding: 20px 10px;
+    border-radius: 10px;
+
+    .was-validated.has-error .invalid-feedback {
+        display: block;
+    }
+
+    .err-card-number {
+        border: 1px solid $red;
+    }
+
+    .filter-layout {
+        padding: 15px;
+        background-color: $grayLighter;
+        margin: 0;
+        color: $grayDarker;
+
+        .filter-payment {
+            display: flex;
+            flex-wrap: inherit;
+
+            select {
+                -webkit-appearance: none;
+                -webkit-border-radius: 0px;
+                -moz-appearance: none;
+                background-image: url("/static/images/RegisterPage_DropDown.png");
+                background-position: right 10px top 50%;
+                background-repeat: no-repeat;
+                padding-right: 1.5em;
+                background-size: 10px;
+            }
+        }
+
+        .btn-3 {
+            height: 35px;
+            width: 90px;
+            font-weight: 500;
+            border-radius: 0;
+            display: inline-flex;
+        }
+    }
+
+    .deposit-form {
+        background-color: transparent;
+        padding: 0;
+        color: var(--color-fg);
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .deposit-category-header.registered {
+            .box-card {
+                display: flex;
+                padding: 10px;
+                border: 1px solid $gray3;
+
+                .box-card-1 {
+                    padding-right: 15px;
+                    flex: 0 0 40%;
+                    max-width: 40%;
+
+                    .logo {
+                        max-width: 110px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .box-card-2 {
+                    flex: 0 0 60%;
+                    max-width: 60%;
+
+                    p {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+
+                    .text-1 {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .step-body-1,
+        .step-body-2,
+        .step-body-3,
+        .step-body-4 {
+            .title {
+                text-transform: uppercase;
+                color: var(--color-fg);
+                font-size: 20px;
+                padding: 0 10px;
+            }
+
+            .payment-list {
+                background-color: transparent;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                padding: 10px 0;
+                grid-gap: 10px;
+
+                .logo {
+                    margin: 0;
+                    max-width: 256px;
+                    border-radius: 7px;
+                    overflow: hidden;
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .detail-payment {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .detail-payment-group {
+                        display: flex;
+                        text-align: end;
+
+                        .group-t0 {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                        }
+                    }
+                }
+
+                .row {
+                    // padding: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $white;
+                }
+
+                .row.last,
+                .row:last-child {
+                    border-bottom: 0;
+                }
+            }
+
+            .deposit-category-header {
+                margin-top: 28px;
+            }
+
+            .payment-list-row {
+                display: flex;
+                flex-direction: column;
+
+                .payment-method-container-row {
+                    display: flex;
+                    padding: 10px 0;
+                    border-bottom: 1px solid $lastbetOddBg;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                    @media (min-width: 680px) {
+                        flex-wrap: nowrap;
+                    }
+
+                    &:first-child {
+                        border-top: 1px solid $lastbetOddBg;
+                    }
+
+                    .Image,
+                    .logo {
+                        flex: 40%;
+                        @media (min-width: 500px) {
+                            flex: 190px;
+                        }
+
+                        img,
+                        svg {
+                            max-width: 180px;
+                            width: 100%;
+                        }
+                    }
+
+                    .TitleDescriptionsWeb {
+                        flex: 60%;
+                        display: flex;
+                        flex-direction: column;
+                        @media (min-width: 500px) {
+                            flex: calc(100% - 190px);
+                        }
+                        @media (min-width: 650px) {
+                            flex: calc(100% - 340px);
+                        }
+                        @media (min-width: 820px) {
+                            flex-direction: row;
+                        }
+
+                        .processing,
+                        .transaction-limit {
+                            flex: 1;
+                            text-transform: uppercase;
+                            font-family: Poppins-Medium;
+                            text-align: left;
+                            margin-left:16px;
+                            display: flex;
+                            flex-direction: row;
+                            @media (min-width: 820px) {
+                                text-align: right;
+                                margin-left:0;
+                                flex-direction: column;
+                            }
+                            
+
+                            span {
+                                &.yellow {
+                                    color: var(--color-fg-payment);
+                                }
+                            }
+                        }
+                        .name {
+                            flex: 1;
+                            display: flex;
+                            align-items: center;
+                            text-transform: uppercase;
+                            font-family: Poppins-Medium;
+                            margin-left:16px;
+                        }
+                    }
+                    .LinkButton {
+                        flex: 100%;
+                        text-align: center;
+                        margin: 6px 0;
+
+                        @media (min-width: 650px) {
+                            flex: 150px;
+                        }
+                        @media (min-width: 680px) {
+                            text-align: right;
+                            margin: auto;
+                        }
+
+                        a {
+                            width: 100%;
+
+                            &:not([href]):not([tabindex]){
+                                color: $white;
+                            }
+
+                            &.buttonLogin {
+                                height: 100%;
+                            }
+
+                            @media (min-width: 680px) {
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn-success {
+                background-color: $green !important;
+                border-color: $green !important;
+                border-radius: 0;
+                font-weight: 500;
+                border-radius: 0;
+                width: 90px;
+                height: 35px;
+            }
+
+            .btn-success.w-auto {
+                width: auto;
+            }
+
+            .btn-success:active,
+            .btn-success:focus,
+            .btn-success:not(:disabled):not(.disabled).active,
+            .btn-success:not(:disabled):not(.disabled).active:focus,
+            .btn-success:not(:disabled):not(.disabled):active,
+            .btn-success:not(:disabled):not(.disabled):active:focus {
+                background-color: $greenLight !important;
+                border-color: $greenLight !important;
+                box-shadow: initial;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        .step-body-1 {
+            .external-payment {
+                .btn-success {
+                    padding: 15px 35px;
+                }
+
+                .icon {
+                    height: 55px;
+                    width: auto;
+                }
+            }
+
+            .btn-success {
+                height: 100%;
+                font-size: 14px;
+                font-weight: 500;
+                border-radius: 0;
+                width: 90px;
+                // height: 35px !important;
+            }
+
+            .btn-success.w-auto {
+                width: auto;
+            }
+        }
+
+        .step-body-2 {
+            form {
+                width: 100%;
+            }
+
+            .logo {
+                width: 100%;
+                max-width: 100px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            hr {
+                border-top: 1px solid $white;
+            }
+
+            .form-group {
+                margin-bottom: 5px;
+            }
+
+            #credit-card-cvc-wrapper,
+            #credit-card-number-wrapper {
+                height: 40px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .bonus-deposit {
+        .bonus-layout {
+            margin-left: -5px;
+            margin-right: -5px;
+
+            .bonus-button {
+                padding: 10px;
+                background: $grayDarker;
+                border: none;
+                width: 100%;
+                margin: 5px;
+                color: $white;
+
+                &.active {
+                    background: $green;
+                }
+            }
+        }
+
+        .bonus-header,
+        .bonus-title {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .bonus-deposit-code {
+            display: flex;
+            padding-top: 10px;
+
+            .bonus-link {}
+
+            .form-check {
+                width: 40px;
+                height: 40px;
+                margin-left: 10px;
+                padding-left: 25px;
+
+                input[type="radio"]::after {
+                    content: "";
+                    background-image: var(--url-uncheckbox);
+                    width: 30px;
+                    height: 30px;
+                    top: 0;
+                    left: -5px;
+                    background-size: 30px;
+                    position: absolute;
+                }
+
+                input[type="radio"]:checked::after {
+                    background-image: var(--url-checkbox);
+                }
+
+                input[type="radio"]::before {
+                    content: "";
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    background: var(--color-bg-accountpage);
+                    top: 0;
+                    left: -5px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.text-cvv {
+    // font-size: 10px;
+    color: $red;
+}
+
+.deposit-form,
+.payment-form {
+    .form-row .form-group {
+        .form-control {
+            background: transparent;
+            border: 1px solid $green;
+            border-radius: 8px;
+            color: var(--color-fg);
+        }
+
+        .amount-input {
+            .form-control {
+                background: transparent;
+                border: 1px solid $green;
+                border-radius: 8px 0 0 8px;
+                color: var(--color-fg);
+            }
+
+            .input-group-text {
+                background: $green;
+                border-left: 0;
+                border: 1px solid $green;
+                border-radius: 0 8px 8px 0;
+                color: var(--color-fg);
+            }
+        }
+    }
+
+    .check-card {
+        .form-check {
+            // width: 40px;
+            // height: 40px;
+            margin-left: 10px;
+            padding-left: 8px;
+
+            input[type="checkbox"]::after {
+                content: "";
+                background-image: var(--url-uncheckbox);
+                width: 25px;
+                height: 25px;
+                top: 0;
+                left: 0px;
+                background-size: 25px;
+                position: absolute;
+            }
+
+            input[type="checkbox"]:checked::after {
+                background-image: var(--url-checkbox);
+            }
+
+            input[type="checkbox"]::before {
+                content: "";
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background: var(--color-bg-accountpage);
+                top: 0;
+                left: 0px;
+                position: absolute;
+            }
+        }
+    }
+}
+
+.amount-input {
+    .input-group-prepend .input-group-text {
+        border-radius: 0;
+    }
+}
+
+.button-crypto {
+    appearance: none;
+    border: none;
+    margin: 0;
+    outline: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    min-width: 36px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    background: rgba(148, 166, 205, 0.2);
+    padding: 10px;
+    border-width: 2px;
+    height: 55px;
+    color: $white;
+    position: relative;
+    overflow: visible;
+    transition: none;
+
+    &:hover {
+        background: $green;
+    }
+}
+
+.cryptoContainer {
+    overflow-y: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.span-crypto {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.paymentButton_gradient {
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.paymentButton_icon {
+    height: 25px;
+    max-width: 100%;
+    display: inherit;
+    -webkit-box-flex: 0;
+    flex: none;
+    overflow: visible;
+    font-size: inherit;
+}
+
+.crypto_active {
+    background: $green;
+}
+
+.fill_white {
+    fill: currentcolor;
+}
+
+.paymentTile_check {
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    margin-left: auto;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 5px;
+    position: absolute;
+    right: 10px;
+}
+
+@include breakpoint(mobile-sm, max) {
+    .hide-text-mobile {
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        :-moz-placeholder {
+            /* Firefox 18- */
+            color: transparent;
+        }
+
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: transparent;
+        }
+
+        :-ms-input-placeholder {
+            color: transparent;
+        }
+    }
+}
